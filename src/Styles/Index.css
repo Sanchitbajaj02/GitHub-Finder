@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
+
+:root {
+  --hue-color: 355; /* default: 225, 355 */
+  --main-color: hsl(var(--hue-color), 72%, 58%);
+
+  --font-noto-serif: "Noto Serif", serif;
+  --font-noto-sans: "Noto Sans", sans-serif;
+}
+.navbar-bg-color {
+  background-color: var(--main-color) !important;
+  font-family: var(--font-noto-serif);
+  font-size: 18px;
+}
