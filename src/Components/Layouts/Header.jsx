@@ -17,7 +17,7 @@ const Header = (props) => {
 
   return (
     <React.Fragment>
-      <Navbar className="navbar-bg-color" dark expand="md">
+      <Navbar className="navbar-bg-color mb-2" dark expand="md">
         <Container>
           <NavbarBrand href="/">Github Finder</NavbarBrand>
           <NavbarToggler onClick={toggle} />

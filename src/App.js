@@ -11,10 +11,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App = () => {
   return (
-    <GithubContext.Provider>
+    <GithubContext.Provider value={{}}>
       <Router>
         <Header />
-        <div class="container">
+        <div className="container">
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />

@@ -12,3 +12,12 @@
   font-family: var(--font-noto-serif);
   font-size: 18px;
 }
+
+.btn-custom-color {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  background-color: var(--main-color) !important;
+}
