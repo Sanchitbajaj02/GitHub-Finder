@@ -10,4 +10,4 @@ const searchUsers = async (username) => {
   return query.data.items;
 };
 
-module.exports = { searchUsers };
+module.exports = searchUsers;

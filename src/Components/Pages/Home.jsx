@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Search from "../Layouts/Search";
 import UserCard from "../Layouts/UserCard";
 
-import { searchUsers } from "../../Data/axios";
+import searchUsers from "../../Data/axios";
 
 import GithubContext from "../../Context/GithubContext";
 
