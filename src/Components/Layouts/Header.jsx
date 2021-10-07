@@ -1,38 +1,57 @@
-import React, { useState } from "react";
-import {
-  Container,
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-} from "reactstrap";
+import React from "react";
 
 const Header = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => setIsOpen(!isOpen);
-
   return (
     <React.Fragment>
-      <Navbar className="navbar-bg-color mb-2" dark expand="md">
-        <Container>
-          <NavbarBrand href="/">Github Finder</NavbarBrand>
-          <NavbarToggler onClick={toggle} />
-          <Collapse isOpen={isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem active>
-                <NavLink href="/">Home</NavLink>
-              </NavItem>
-              <NavItem active>
-                <NavLink href="/about">About</NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Container>
-      </Navbar>
+      <nav className="navbar navbar-expand-md navbar-dark navbar-bg-color">
+        <div className="container">
+          <a className="navbar-brand" href="/">
+            Navbar
+          </a>
+          <button
+            className="navbar-toggler d-lg-none"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navID"
+            aria-controls="navID"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
+          <div className="collapse navbar-collapse" id="navID">
+            <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
+              <li className="nav-item active">
+                <a className="nav-link" href="/">
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/about">
+                  About
+                </a>
+              </li>
+              {/* TODO: dark mode switch */}
+              {/* <li className="nav-item mx-auto">
+                <div className="custom-control custom-switch">
+                  <input
+                    type="checkbox"
+                    className="custom-control-input"
+                    id="customSwitch1"
+                    defaultChecked={false}
+                    onChange={(e) => console.log(e.target.checked)}
+                  />
+                  <label
+                    className="custom-control-label"
+                    htmlFor="customSwitch1"
+                  ></label>
+                </div>
+              </li> */}
+            </ul>
+          </div>
+        </div>
+      </nav>
     </React.Fragment>
   );
 };

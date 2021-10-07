@@ -15,9 +15,55 @@
 
 .btn-custom-color {
   width: 100%;
-  border: none;
   outline: none;
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
-  background-color: var(--main-color) !important;
+  background-color: var(--main-color);
+  color: white;
+}
+
+.btn-custom-color:hover {
+  cursor: pointer;
+  color: var(--main-color) !important;
+  background-color: white;
+  border: 1px solid var(--main-color);
+}
+
+.github-button {
+  width: 100%;
+  outline: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  background-color: #21262d;
+  color: white;
+}
+.github-button:hover {
+  cursor: pointer;
+  color: #21262d;
+  background-color: white;
+  border: 1px solid #21262d;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+}
+
+.card-shadow {
+  margin: 1rem auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease;
+}
+
+.card-shadow:hover {
+  box-shadow: 0 3px 6px var(--main-color);
+}
+
+.card-img {
+  text-align: center;
+  width: 50%;
+  margin: 1rem auto;
+  border-radius: 50%;
 }
