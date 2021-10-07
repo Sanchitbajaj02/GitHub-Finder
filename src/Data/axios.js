@@ -1,6 +1,6 @@
-const axios = require("axios");
+import { create } from "axios";
 
-const instance = axios.create({
+const instance = create({
   baseURL: "https://api.github.com/",
 });
 
@@ -10,4 +10,4 @@ const searchUsers = async (username) => {
   return query.data.items;
 };
 
-module.exports = searchUsers;
+export { searchUsers };
