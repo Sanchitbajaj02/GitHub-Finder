@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserCard = ({ image, username, url }) => {
+const UserCard = ({ image, username, githubUrl }) => {
   return (
     <React.Fragment>
       <div className="card card-shadow">
@@ -10,13 +10,13 @@ const UserCard = ({ image, username, url }) => {
           <a
             type="button"
             href="/user/:username"
-            className="btn btn-custom-color"
+            className="btn btn-custom-color my-1"
           >
             View More
           </a>
           <a
             type="button"
-            href={"https://www.github.com/" + username}
+            href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="btn github-button my-1"

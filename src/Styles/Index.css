@@ -16,7 +16,7 @@
 .btn-custom-color {
   width: 100%;
   outline: none;
-  padding: 0.5rem 1rem;
+  padding: 0.3rem 1rem;
   font-size: 1.25rem;
   background-color: var(--main-color);
   color: white;
@@ -32,8 +32,8 @@
 .github-button {
   width: 100%;
   outline: none;
-  padding: 0.5rem 1rem;
-  font-size: 1.25rem;
+  padding: 0.3rem 1rem;
+  font-size: 1.2rem;
   background-color: #21262d;
   color: white;
 }
@@ -52,6 +52,7 @@ input[type="text"] {
 
 .card-shadow {
   margin: 1rem auto;
+  padding: 0.5rem;
   border-radius: 0.5rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   transition: all 0.5s ease;
@@ -63,7 +64,7 @@ input[type="text"] {
 
 .card-img {
   text-align: center;
-  width: 50%;
+  width: 40%;
   margin: 1rem auto;
   border-radius: 50%;
 }
