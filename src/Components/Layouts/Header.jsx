@@ -6,7 +6,7 @@ const Header = (props) => {
       <nav className="navbar navbar-expand-md navbar-dark navbar-bg-color">
         <div className="container">
           <a className="navbar-brand" href="/">
-            Navbar
+            GitHub Finder
           </a>
           <button
             className="navbar-toggler d-lg-none"
@@ -27,11 +27,22 @@ const Header = (props) => {
                   Home
                 </a>
               </li>
-              <li className="nav-item">
+              <li className="nav-item active">
                 <a className="nav-link" href="/about">
                   About
                 </a>
               </li>
+              <li className="nav-item active">
+                <a href="/users" className="nav-link">
+                  User Search
+                </a>
+              </li>
+              <li className="nav-item active">
+                <a href="/orgs" className="nav-link">
+                  Organization Search
+                </a>
+              </li>
+
               {/* TODO: dark mode switch */}
               {/* <li className="nav-item mx-auto">
                 <div className="custom-control custom-switch">

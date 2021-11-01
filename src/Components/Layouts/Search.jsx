@@ -15,7 +15,7 @@ const Search = () => {
   };
   return (
     <React.Fragment>
-      <form className="my-5" onSubmit={handleSubmit}>
+      <form className="my-5" onSubmit={handleSubmit} method="get">
         <div className="row">
           <div className="col-md-9">
             <div className="form-group">
