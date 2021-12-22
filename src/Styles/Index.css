@@ -96,6 +96,10 @@ input[type="text"] {
   justify-content: space-between;
 }
 
+.top-langs {
+  width: 40%;
+}
+
 @media screen and (max-width: 991px) {
   .profile-github-button {
     width: 100%;
@@ -107,5 +111,11 @@ input[type="text"] {
 
   .flex-buttons > button {
     margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .top-langs {
+    width: 100%;
   }
 }

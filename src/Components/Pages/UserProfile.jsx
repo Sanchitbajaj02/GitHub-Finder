@@ -122,7 +122,59 @@ const UserProfile = (props) => {
         </div>
       </section>
 
-      <section className="my-3"></section>
+      <section className="my-3">
+        <div className="card card-shadow px-3">
+          <h4 className="text-center mb-4 font-weight-bold">
+            GitHub Statistics
+          </h4>
+          <figure>
+            <img
+              src={`https://activity-graph.herokuapp.com/graph?username=${getGithubUser.login}&&bg_color=000000&color=00FF00&line=FFFF00&point=00ADFE&area=true`}
+              alt="Github Commit Graph"
+              width="100%"
+              className="img-fluid"
+            />
+          </figure>
+          <figure>
+            <img
+              src={`https://github-profile-trophy.vercel.app/?username=${getGithubUser.login}&row=1&column=7&margin-w=5&no-frame=true&theme=juicyfresh`}
+              alt="Github Trophies"
+              width="100%"
+              className="img-fluid"
+            />
+          </figure>
+
+          <div className="row">
+            <div className="col-md-6">
+              <figure>
+                <img
+                  src={`https://github-readme-stats.vercel.app/api?username=${getGithubUser.login}&show_icons=true&count_private=true&include_all_commits=true&title_color=00FF00&icon_color=00FF00&text_color=FFFFFF&bg_color=000000`}
+                  alt="Github Stats"
+                  width="100%"
+                  className="img-fluid"
+                />
+              </figure>
+            </div>
+            <div className="col-md-6">
+              <figure>
+                <img
+                  src={`https://github-readme-streak-stats.herokuapp.com/?user=${getGithubUser.login}&theme=chartreuse-dark`}
+                  alt="Github Streaks"
+                  width="100%"
+                  className="img-fluid"
+                />
+              </figure>
+            </div>
+          </div>
+          <figure className="text-center">
+            <img
+              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${getGithubUser.login}&count_private=true&include_all_commits=true&layout=compact&title_color=00FF00&icon_color=00FF00&text_color=FFFFFF&bg_color=000000`}
+              alt="Github Top Languages"
+              className="img-fluid top-langs"
+            />
+          </figure>
+        </div>
+      </section>
     </React.Fragment>
   );
 };
