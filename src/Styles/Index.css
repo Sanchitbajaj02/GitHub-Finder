@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
 
 :root {
-  --hue-color: 355; /* default: 225, 355 */
+  --hue-color: 235; /* default: 225, 355 */
   --main-color: hsl(var(--hue-color), 72%, 58%);
 
   --font-noto-serif: "Noto Serif", serif;
@@ -11,6 +11,16 @@
   background-color: var(--main-color) !important;
   font-family: var(--font-noto-serif);
   font-size: 18px;
+}
+
+.link-card-highlight {
+  color: black;
+  text-decoration: none;
+}
+.link-card-highlight:hover {
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  color: black;
+  text-decoration: none;
 }
 
 .btn-custom-color {
