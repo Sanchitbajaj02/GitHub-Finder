@@ -13,7 +13,7 @@ const About = () => {
       </section>
 
       <section>
-        <h4 className="d-inline">Version:</h4> 1.0.0
+        <h4 className="d-inline">Version:</h4> 1.2.0
         <br />
         <h4 className="d-inline">Author:</h4> Sanchit Bajaj
         <br />
@@ -21,8 +21,7 @@ const About = () => {
         <a
           href="http://github.com/sanchitbajaj02/"
           target="_blank"
-          rel="noreferrer"
-        >
+          rel="noreferrer">
           @sanchitbaj02
         </a>
       </section>

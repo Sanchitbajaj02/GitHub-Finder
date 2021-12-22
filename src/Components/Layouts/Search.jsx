@@ -3,19 +3,16 @@ import React, { useState } from "react";
 const Search = () => {
   const [username, setUsername] = useState("");
 
-  const handleChange = (event) => {
-    const { value } = event.target;
-    setUsername(value);
-  };
+  const handleChange = (event) => setUsername(event.target.value);
 
   const handleSubmit = (event) => {
     // event.preventDefault();
     window.sessionStorage.setItem("username", username);
-    event.target.reset();
   };
+
   return (
     <React.Fragment>
-      <form className="my-5" onSubmit={handleSubmit} method="get">
+      <form className="my-5" onSubmit={handleSubmit} method="GET">
         <div className="row">
           <div className="col-md-9">
             <div className="form-group">
