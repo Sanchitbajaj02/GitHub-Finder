@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import GithubContext from "../../Context/GithubContext";
 
 import { MdDone, MdCancel, MdArrowBackIos } from "react-icons/md";
@@ -8,16 +8,18 @@ import { getUserData } from "../../Data/axios";
 
 const UserProfile = (props) => {
   const [getGithubUser, setGithubUser] = useState({});
-  const context = useContext(GithubContext);
+  const { store, setStore } = useContext(GithubContext);
+
+  const { username } = useParams();
 
   useEffect(() => {
-    getUserData(props.match.params.username)
+    getUserData(username)
       .then((resp) => {
         setGithubUser(resp);
         // console.log(resp);
       })
       .catch((err) => console.log(err));
-  }, [props.match.params.username]);
+  }, [username]);
 
   return (
     <React.Fragment>
@@ -31,7 +33,7 @@ const UserProfile = (props) => {
               className="btn btn-custom-color mt-4"
               onClick={() => {
                 window.sessionStorage.clear();
-                context.setCreds("");
+                setStore("");
               }}>
               <MdArrowBackIos size={20} /> Back to Search
             </Link>

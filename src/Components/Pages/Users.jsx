@@ -12,19 +12,17 @@ import { BsFillGridFill } from "react-icons/bs";
 const Home = () => {
   const [userData, setUserData] = useState([]);
 
-  const context = useContext(GithubContext);
+  const { store } = useContext(GithubContext);
   useEffect(() => {
-    try {
-      searchUsers(context.creds?.username)
+    if (store.username !== null) {
+      searchUsers(store?.username)
         .then((res) => {
           console.log(res);
           setUserData(res);
         })
         .catch((err) => console.log(err));
-    } catch (error) {
-      console.log(error);
     }
-  }, [context.creds?.username]);
+  }, [store?.username]);
 
   console.log(userData);
 
