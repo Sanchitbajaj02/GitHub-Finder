@@ -22,7 +22,7 @@ const Header = (props) => {
           </button>
 
           <div className="collapse navbar-collapse" id="navID">
-            <ul className="navbar-nav ">
+            <ul className="navbar-nav ms-auto">
               <li className="nav-item ">
                 <Link className="nav-link text-light" to="/">
                   Home

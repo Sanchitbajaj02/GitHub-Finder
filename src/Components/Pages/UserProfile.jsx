@@ -7,6 +7,8 @@ import { BiMap, BiGlobe, BiNote } from "react-icons/bi";
 import { FaCodepen, FaStore, FaUserFriends, FaUsers } from "react-icons/fa";
 import { getUserData } from "../../Data/axios";
 
+import Repositories from "../Layouts/Repositories";
+
 const UserProfile = (props) => {
   const [getGithubUser, setGithubUser] = useState({});
   const { store, setStore } = useContext(GithubContext);
@@ -17,7 +19,6 @@ const UserProfile = (props) => {
     getUserData(username)
       .then((resp) => {
         setGithubUser(resp);
-        // console.log(resp);
       })
       .catch((err) => console.log(err));
   }, [username]);
@@ -50,7 +51,7 @@ const UserProfile = (props) => {
           </div>
           <div className="col-md-8 my-2">
             <div className="d-flex align-items-center">
-              <h2>{getGithubUser?.name}</h2>
+              <h2 className="me-3">{getGithubUser?.name}</h2>
 
               {getGithubUser?.hireable ? (
                 <span className="badge bg-info text-dark">Hireable</span>
@@ -93,9 +94,9 @@ const UserProfile = (props) => {
           </div>
         </article>
 
-        <article class="row g-1 py-3 row-cols-1 row-cols-md-2 row-cols-lg-4">
-          <div class="col d-flex align-items-center">
-            <div class="icon-square text-bg-dark d-inline-flex align-items-center justify-content-center p-2 rounded me-3">
+        <article className="row g-1 py-3 row-cols-1 row-cols-md-2 row-cols-lg-4">
+          <div className="col d-flex align-items-center">
+            <div className="icon-square text-bg-dark d-inline-flex align-items-center justify-content-center p-2 rounded me-3">
               <FaUsers size={30} />
             </div>
             <div>
@@ -104,8 +105,8 @@ const UserProfile = (props) => {
             </div>
           </div>
 
-          <div class="col d-flex align-items-center">
-            <div class="icon-square text-bg-dark d-inline-flex align-items-center justify-content-center p-2 rounded me-3">
+          <div className="col d-flex align-items-center">
+            <div className="icon-square text-bg-dark d-inline-flex align-items-center justify-content-center p-2 rounded me-3">
               <FaUserFriends size={30} />
             </div>
             <div>
@@ -114,8 +115,8 @@ const UserProfile = (props) => {
             </div>
           </div>
 
-          <div class="col d-flex align-items-center">
-            <div class="icon-square text-bg-dark d-inline-flex align-items-center justify-content-center p-2 rounded me-3">
+          <div className="col d-flex align-items-center">
+            <div className="icon-square text-bg-dark d-inline-flex align-items-center justify-content-center p-2 rounded me-3">
               <FaCodepen size={30} />
             </div>
             <div>
@@ -126,8 +127,8 @@ const UserProfile = (props) => {
             </div>
           </div>
 
-          <div class="col d-flex align-items-center">
-            <div class="icon-square text-bg-dark d-inline-flex align-items-center justify-content-center p-2 rounded me-3">
+          <div className="col d-flex align-items-center">
+            <div className="icon-square text-bg-dark d-inline-flex align-items-center justify-content-center p-2 rounded me-3">
               <FaStore size={30} />
             </div>
             <div>
@@ -143,12 +144,9 @@ const UserProfile = (props) => {
       <section className="my-3">
         <div className="card card-cover shadow p-3">
           <section className="row">
-            <article className="col-md-7">
-              <h4 className="text-center my-3 fw-bold">
-                GitHub Statistics
-              </h4>
+            <article className="col-lg-7">
+              <h4 className="text-center my-3 fw-bold">GitHub Statistics</h4>
               <figure>
-                {/* &&bg_color=000000&color=00FF00&line=FFFF00&point=00ADFE&area=true */}
                 <img
                   src={`https://activity-graph.herokuapp.com/graph?username=${getGithubUser?.login}&bg_color=ffffff&color=5194F0&line=5194F0&area=true&area_color=D5E5FA`}
                   alt="Github Activity Graph"
@@ -164,29 +162,24 @@ const UserProfile = (props) => {
                   className="img-fluid"
                 />
               </figure>
-              <div className="row justify-content-center">
-                <div className="col-md-5">
-                  <figure>
-                    <img
-                      src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${getGithubUser.login}&count_private=true&include_all_commits=true&layout=compact`}
-                      alt="Github Top Languages"
-                      className="img-fluid"
-                      width="100%"
-                    />
-                  </figure>
-                </div>
-                <div className="col-md-6">
-                  <figure>
-                    {/* &show_icons=true&locale=en&show_icons=true&count_private=true&include_all_commits=true */}
-                    <img
-                      src={`https://github-readme-stats.vercel.app/api?username=${getGithubUser.login}&show_icons=true&count_private=true&include_all_commits=true`}
-                      alt="Github Stats"
-                      width="100%"
-                      className="img-fluid"
-                    />
-                  </figure>
-                </div>
-              </div>
+
+              <figure>
+                <img
+                  src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${getGithubUser.login}&count_private=true&include_all_commits=true&layout=compact`}
+                  alt="Github Top Languages"
+                  className="img-fluid"
+                  width="100%"
+                />
+              </figure>
+
+              <figure>
+                <img
+                  src={`https://github-readme-stats.vercel.app/api?username=${getGithubUser.login}&show_icons=true&count_private=true&include_all_commits=true`}
+                  alt="Github Stats"
+                  width="100%"
+                  className="img-fluid"
+                />
+              </figure>
 
               <figure>
                 <img
@@ -197,10 +190,10 @@ const UserProfile = (props) => {
                 />
               </figure>
             </article>
-            <article className="col-md-5">
-              <h4 className="text-center my-3 fw-bold">
-                Latest Repositories
-              </h4>
+            <article className="col-lg-5">
+              <h4 className="text-center my-3 fw-bold">Latest Repositories</h4>
+
+              <Repositories username={username} />
             </article>
           </section>
         </div>

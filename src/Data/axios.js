@@ -1,16 +1,59 @@
 import axios from "axios";
 
+const clientID = "b28224eeca21968fa36a";
+const clientSecret = "e3b14f7415d053ca783adcabd73d17aa8fd11778";
+
 const instance = axios.create({
   baseURL: "https://api.github.com/",
 });
 
 // search users
 export const searchUsers = async (username) => {
-  const query = await instance.get(`search/users?q=${username}`);
-  return query.data.items;
+  const promise = new Promise((resolve, reject) => {
+    instance
+      .get(`search/users?q=${username}`)
+      .then((query) => {
+        resolve(query.data.items);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+
+    // return query.data.items;
+  });
+
+  return promise;
 };
 
 export const getUserData = async (username) => {
-  const query = await instance.get(`users/${username}`);
-  return query.data;
+  const promise = new Promise((resolve, reject) => {
+    instance
+      .get(`users/${username}`)
+      .then((query) => {
+        resolve(query.data);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+
+  return promise;
+};
+
+// get user repositories
+export const getUserRepos = async (username) => {
+  const promise = new Promise((resolve, reject) => {
+    instance
+      .get(
+        `users/${username}/repos?per_page=10&sort=created:desc&client_id=${clientID}&client_secret=${clientSecret}`
+      )
+      .then((query) => {
+        resolve(query.data);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+
+  return promise;
 };

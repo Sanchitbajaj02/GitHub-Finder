@@ -137,7 +137,7 @@ input[type="text"] {
 }
 
 .badge {
-  margin-left: 10px;
+  /* margin-left: 10px; */
   border-radius: 50px;
   padding: 0.3rem 0.75rem;
   font-weight: 600;
