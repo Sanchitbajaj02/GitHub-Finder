@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const clientID = "b28224eeca21968fa36a";
-const clientSecret = "e3b14f7415d053ca783adcabd73d17aa8fd11778";
+const clientID = process.env.REACT_APP_CLIENT_ID;
+const clientSecret = process.env.REACT_APP_CLIENT_SECRET;
 
 const instance = axios.create({
   baseURL: "https://api.github.com/",

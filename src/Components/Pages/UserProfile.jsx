@@ -4,7 +4,13 @@ import GithubContext from "../../Context/GithubContext";
 
 import { MdArrowBackIos } from "react-icons/md";
 import { BiMap, BiGlobe, BiNote } from "react-icons/bi";
-import { FaCodepen, FaStore, FaUserFriends, FaUsers } from "react-icons/fa";
+import {
+  FaCodepen,
+  FaStore,
+  FaUserFriends,
+  FaUsers,
+  FaGithub,
+} from "react-icons/fa";
 import { getUserData } from "../../Data/axios";
 
 import Repositories from "../Layouts/Repositories";
@@ -88,7 +94,7 @@ const UserProfile = (props) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn profile-github-button">
-                Visit GitHub Profile
+                <FaGithub size={22} />   Visit GitHub Profile
               </a>
             </div>
           </div>

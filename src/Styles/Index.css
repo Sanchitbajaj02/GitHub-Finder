@@ -3,8 +3,12 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Raleway:wght@400;600;800&display=swap");
 
 :root {
-  --hue-color: 5; /* default: 225, 355 */
-  --main-color: hsl(var(--hue-color), 72%, 50%);
+  /* default: 225, 355 */
+  /* --hue-color: 5; 
+  --main-color: hsl(var(--hue-color), 72%, 50%); */
+
+  --hue-color: 295;
+  --main-color: hsl(var(--hue-color), 50%, 25%);
 
   --font-noto-serif: "Noto Serif", serif;
   --font-noto-sans: "Noto Sans", sans-serif;
@@ -104,17 +108,17 @@ input[type="text"] {
 
 .profile-github-button {
   outline: none;
-  padding: 0.3rem 1rem;
+  padding: 0.5rem 1.5rem;
   font-size: 1rem;
-  background-color: #21262d;
-  color: white;
+  color: var(--main-color);
+  background-color: white;
+  border: 1px solid var(--main-color);
 }
 
 .profile-github-button:hover {
   cursor: pointer;
-  color: #21262d;
-  background-color: white;
-  border: 1px solid #21262d;
+  background-color: var(--main-color);
+  color: white;
 }
 
 .flex-buttons {
