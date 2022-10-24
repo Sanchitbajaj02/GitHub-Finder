@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Raleway:wght@400;600;800&display=swap");
 
 :root {
   --hue-color: 235; /* default: 225, 355 */
@@ -6,11 +8,26 @@
 
   --font-noto-serif: "Noto Serif", serif;
   --font-noto-sans: "Noto Sans", sans-serif;
+  --font-raleway: "Raleway", sans-serif;
+  --font-dm-sans: "DM Sans", sans-serif;
 }
+
+p {
+  font-family: var(--font-noto-sans);
+}
+
 .navbar-bg-color {
   background-color: var(--main-color) !important;
-  font-family: var(--font-noto-serif);
+  font-family: var(--font-raleway);
   font-size: 18px;
+  font-weight: 600;
+}
+
+.home-grid-wrapper {
+  height: 90vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .link-card-highlight {
@@ -18,8 +35,7 @@
   text-decoration: none;
 }
 .link-card-highlight:hover {
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  color: black;
+  color: var(--main-color);
   text-decoration: none;
 }
 
@@ -28,15 +44,15 @@
   outline: none;
   padding: 0.3rem 1rem;
   font-size: 1.25rem;
-  background-color: var(--main-color);
-  color: white;
+  color: var(--main-color);
+  background-color: white;
+  border: 1px solid var(--main-color);
 }
 
 .btn-custom-color:hover {
   cursor: pointer;
-  color: var(--main-color) !important;
-  background-color: white;
-  border: 1px solid var(--main-color);
+  background-color: var(--main-color);
+  color: white;
 }
 
 .github-button {
@@ -64,12 +80,12 @@ input[type="text"] {
   margin: 1rem auto;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
   transition: all 0.5s ease;
 }
 
 .card-shadow:hover {
-  box-shadow: 0 3px 6px var(--main-color);
+  box-shadow: 0 3px 10px var(--main-color);
 }
 
 .card-img {

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <React.Fragment>
-      <div className="row">
+      <div className="row home-grid-wrapper">
         <div className="col-md-6">
           <div className="card card-shadow">
             <Link

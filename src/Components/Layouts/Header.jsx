@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Header = (props) => {
   return (
@@ -8,57 +9,40 @@ const Header = (props) => {
           <a className="navbar-brand" href="/">
             GitHub Finder
           </a>
+
           <button
-            className="navbar-toggler d-lg-none"
+            className="navbar-toggler"
             type="button"
-            data-toggle="collapse"
-            data-target="#navID"
+            data-bs-toggle="collapse"
+            data-bs-target="#navID"
             aria-controls="navID"
             aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+            aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
 
           <div className="collapse navbar-collapse" id="navID">
-            <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
-              <li className="nav-item active">
-                <a className="nav-link" href="/">
+            <ul className="navbar-nav ">
+              <li className="nav-item ">
+                <a className="nav-link active" href="/">
                   Home
                 </a>
               </li>
-              <li className="nav-item active">
-                <a className="nav-link" href="/about">
+              <li className="nav-item">
+                <a className="nav-link active" href="/about">
                   About
                 </a>
               </li>
-              <li className="nav-item active">
-                <a href="/users" className="nav-link">
+              <li className="nav-item ">
+                <a href="/users" className="nav-link active">
                   User Search
                 </a>
               </li>
-              <li className="nav-item active">
-                <a href="/orgs" className="nav-link">
+              <li className="nav-item ">
+                <a href="/orgs" className="nav-link active">
                   Organization Search
                 </a>
               </li>
-
-              {/* TODO: dark mode switch */}
-              {/* <li className="nav-item mx-auto">
-                <div className="custom-control custom-switch">
-                  <input
-                    type="checkbox"
-                    className="custom-control-input"
-                    id="customSwitch1"
-                    defaultChecked={false}
-                    onChange={(e) => console.log(e.target.checked)}
-                  />
-                  <label
-                    className="custom-control-label"
-                    htmlFor="customSwitch1"
-                  ></label>
-                </div>
-              </li> */}
             </ul>
           </div>
         </div>

@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import Search from "../Layouts/Search";
 import UserCard from "../Layouts/UserCard";
 
 import { searchUsers } from "../../Data/axios";
-
-import GithubContext from "../../Context/GithubContext";
 
 import { AiOutlineOrderedList } from "react-icons/ai";
 import { BsFillGridFill } from "react-icons/bs";
@@ -12,23 +10,27 @@ import { BsFillGridFill } from "react-icons/bs";
 const Home = () => {
   const [userData, setUserData] = useState([]);
 
-  const { store } = useContext(GithubContext);
+  const [username, setUsername] = useState(null);
+
   useEffect(() => {
-    if (store.username !== null) {
-      searchUsers(store?.username)
+    if (username !== null) {
+      searchUsers(username)
         .then((res) => {
           console.log(res);
           setUserData(res);
         })
         .catch((err) => console.log(err));
     }
-  }, [store?.username]);
+  }, [username]);
 
   console.log(userData);
 
   return (
     <React.Fragment>
-      <Search />
+      <section>
+        <h2 className="text-center mt-4">Search for User</h2>
+      </section>
+      <Search username={username} setUsername={setUsername} />
       <section>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           {userData.length === 1 ? (

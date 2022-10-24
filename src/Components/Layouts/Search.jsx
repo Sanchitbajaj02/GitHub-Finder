@@ -1,20 +1,18 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 
-const Search = () => {
-  const [username, setUsername] = useState("");
-
-  const handleChange = (event) => setUsername(event.target.value);
+const Search = ({ username, setUsername }) => {
+  const refVar = useRef();
 
   const handleSubmit = (event) => {
-    // event.preventDefault();
-    window.sessionStorage.setItem("username", username);
+    event.preventDefault();
+    setUsername(refVar.current.value);
   };
 
   return (
     <React.Fragment>
       <form className="my-5" onSubmit={handleSubmit} method="GET">
         <div className="row">
-          <div className="col-md-9">
+          <div className="col-md-9 my-3">
             <div className="form-group">
               <input
                 type="text"
@@ -22,11 +20,11 @@ const Search = () => {
                 name="username"
                 id="username"
                 placeholder="Enter github username"
-                onChange={handleChange}
+                ref={refVar}
               />
             </div>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-3 my-3">
             <button className="btn btn-custom-color">Submit</button>
           </div>
         </div>
