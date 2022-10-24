@@ -3,8 +3,8 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Raleway:wght@400;600;800&display=swap");
 
 :root {
-  --hue-color: 235; /* default: 225, 355 */
-  --main-color: hsl(var(--hue-color), 72%, 58%);
+  --hue-color: 5; /* default: 225, 355 */
+  --main-color: hsl(var(--hue-color), 72%, 50%);
 
   --font-noto-serif: "Noto Serif", serif;
   --font-noto-sans: "Noto Sans", sans-serif;
@@ -98,8 +98,8 @@ input[type="text"] {
 /* user profile */
 .profile-card-img {
   text-align: center;
-  width: 40%;
-  border-radius: 50%;
+  width: 75%;
+  border-radius: 10px;
 }
 
 .profile-github-button {
@@ -122,10 +122,6 @@ input[type="text"] {
   justify-content: space-between;
 }
 
-.top-langs {
-  width: 40%;
-}
-
 @media screen and (max-width: 991px) {
   .profile-github-button {
     width: 100%;
@@ -140,8 +136,9 @@ input[type="text"] {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .top-langs {
-    width: 100%;
-  }
+.badge {
+  margin-left: 10px;
+  border-radius: 50px;
+  padding: 0.3rem 0.75rem;
+  font-weight: 600;
 }
