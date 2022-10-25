@@ -8,7 +8,7 @@ const RepoCard = ({ repo }) => {
       <div className="card text-dark border-0 shadow">
         <div className="card-body">
           <h4 className="card-title mb-3">
-            <FaLink size={20} /> {repo?.name}
+            <a href={repo?.html_url} target="_blank" rel="noopener noreferrer"><FaLink size={20} /> {repo?.name}</a>
           </h4>
           {repo?.description && (
             <p className="card-text text-dark">{repo?.description}</p>
