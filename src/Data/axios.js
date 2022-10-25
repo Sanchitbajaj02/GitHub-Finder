@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const clientID = process.env.REACT_APP_CLIENT_ID;
-const clientSecret = process.env.REACT_APP_CLIENT_SECRET;
+// const clientID = process.env.REACT_APP_CLIENT_ID;
+// const clientSecret = process.env.REACT_APP_CLIENT_SECRET;
 
 const instance = axios.create({
   baseURL: "https://api.github.com/",
@@ -45,7 +45,7 @@ export const getUserRepos = async (username) => {
   const promise = new Promise((resolve, reject) => {
     instance
       .get(
-        `users/${username}/repos?per_page=10&sort=created:desc&client_id=${clientID}&client_secret=${clientSecret}`
+        `users/${username}/repos?per_page=10&sort=created:desc`
       )
       .then((query) => {
         resolve(query.data);
