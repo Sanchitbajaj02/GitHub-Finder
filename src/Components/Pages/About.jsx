@@ -13,7 +13,7 @@ const About = () => {
       </section>
 
       <section>
-        <h4 className="d-inline">Version:</h4> 1.2.0
+        <h4 className="d-inline">Version:</h4> 1.5.0
         <br />
         <h4 className="d-inline">Author:</h4> Sanchit Bajaj
         <br />
