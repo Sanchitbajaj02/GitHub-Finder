@@ -12,12 +12,16 @@ const Home = () => {
 
   const [username, setUsername] = useState(null);
 
+  const filterbyType = (userArray) => {
+    return userArray.filter((e) => e.type === "User");
+  };
+
   useEffect(() => {
     if (username !== null) {
       searchUsers(username)
         .then((res) => {
           console.log(res);
-          setUserData(res);
+          setUserData(filterbyType(res));
         })
         .catch((err) => console.log(err));
     }
@@ -30,7 +34,7 @@ const Home = () => {
       <section>
         <h2 className="text-center mt-4">Search for User</h2>
       </section>
-      <Search username={username} setUsername={setUsername} />
+      <Search data={username} setData={setUsername} type="user" />
       <section>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           {userData.length === 1 ? (
@@ -57,9 +61,10 @@ const Home = () => {
               return (
                 <div className="col-lg-4 col-md-6" key={index}>
                   <UserCard
-                    image={data.avatar_url}
-                    username={data.login}
-                    githubUrl={data.html_url}
+                    image={data?.avatar_url}
+                    username={data?.login}
+                    githubUrl={data?.html_url}
+                    type={data?.type}
                   />
                 </div>
               );

@@ -33,16 +33,31 @@ const UserProfile = (props) => {
     <React.Fragment>
       {/* back button */}
       <section className="my-3">
-        <Link
-          to="/users"
-          type="button"
-          className="btn  mt-4"
-          onClick={() => {
-            window.sessionStorage.clear();
-            setStore("");
-          }}>
-          <MdArrowBackIos size={20} /> Back to Search
-        </Link>
+        {getGithubUser.type === "User" ? (
+          <Link
+            to="/users"
+            type="button"
+            className="btn  mt-4"
+            onClick={() => {
+              window.sessionStorage.clear();
+              setStore("");
+            }}
+          >
+            <MdArrowBackIos size={20} /> Back to Search
+          </Link>
+        ) : (
+          <Link
+            to="/orgs"
+            type="button"
+            className="btn  mt-4"
+            onClick={() => {
+              window.sessionStorage.clear();
+              setStore("");
+            }}
+          >
+            <MdArrowBackIos size={20} /> Back to Search
+          </Link>
+        )}
       </section>
 
       {/* profile section */}
@@ -61,9 +76,9 @@ const UserProfile = (props) => {
 
               {getGithubUser?.hireable ? (
                 <span className="badge bg-info text-dark">Hireable</span>
-              ) : (
+              ) : getGithubUser?.type === "User" ? (
                 <span className="badge bg-danger text-light">Not-Hireable</span>
-              )}
+              ) : null}
             </div>
             <h5 className="mb-3">@ {getGithubUser?.login}</h5>
 
@@ -93,8 +108,9 @@ const UserProfile = (props) => {
                 href={getGithubUser.html_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn profile-github-button">
-                <FaGithub size={22} />   Visit GitHub Profile
+                className="btn profile-github-button"
+              >
+                <FaGithub size={22} /> Visit GitHub Profile
               </a>
             </div>
           </div>

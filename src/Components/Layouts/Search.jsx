@@ -1,11 +1,11 @@
 import React, { useRef } from "react";
 
-const Search = ({ username, setUsername }) => {
+const Search = ({ data, setData, type }) => {
   const refVar = useRef();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setUsername(refVar.current.value);
+    setData(refVar.current.value);
   };
 
   return (
@@ -19,7 +19,7 @@ const Search = ({ username, setUsername }) => {
                 className="form-control"
                 name="username"
                 id="username"
-                placeholder="Enter github username"
+                placeholder={type}
                 ref={refVar}
               />
             </div>
