@@ -25,6 +25,20 @@ export const searchUsers = async (username) => {
   return promise;
 };
 
+export const searchOrganization = async (organization) => {
+  const promise = new Promise((resolve, reject) => {
+    instance
+      .get(`/orgs/${organization}`)
+      .then((query) => {
+        resolve(query.data);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+  return promise;
+};
+
 export const getUserData = async (username) => {
   const promise = new Promise((resolve, reject) => {
     instance
@@ -44,9 +58,7 @@ export const getUserData = async (username) => {
 export const getUserRepos = async (username) => {
   const promise = new Promise((resolve, reject) => {
     instance
-      .get(
-        `users/${username}/repos?per_page=10&sort=created:desc`
-      )
+      .get(`users/${username}/repos?per_page=10&sort=created:desc`)
       .then((query) => {
         resolve(query.data);
       })

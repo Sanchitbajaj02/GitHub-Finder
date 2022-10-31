@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import React from "react";
 
 const About = () => {
   return (
@@ -21,7 +22,8 @@ const About = () => {
         <a
           href="http://github.com/sanchitbajaj02/"
           target="_blank"
-          rel="noreferrer">
+          rel="noreferrer"
+        >
           @sanchitbaj02
         </a>
       </section>
