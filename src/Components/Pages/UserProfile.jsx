@@ -166,52 +166,58 @@ const UserProfile = (props) => {
       <section className="my-3">
         <div className="card card-cover shadow p-3">
           <section className="row">
-            <article className="col-lg-7">
-              <h4 className="text-center my-3 fw-bold">GitHub Statistics</h4>
-              <figure>
-                <img
-                  src={`https://activity-graph.herokuapp.com/graph?username=${getGithubUser?.login}&bg_color=ffffff&color=5194F0&line=5194F0&area=true&area_color=D5E5FA`}
-                  alt="Github Activity Graph"
-                  width="100%"
-                  className="img-fluid"
-                />
-              </figure>
-              <figure>
-                <img
-                  src={`https://github-profile-trophy.vercel.app/?username=${getGithubUser?.login}&row=1&column=7&margin-w=5&no-frame=false`}
-                  alt="Github Trophies"
-                  width="100%"
-                  className="img-fluid"
-                />
-              </figure>
+           
+              {getGithubUser?.type !== "Organization" ? (
+                 <article className="col-lg-7">
+                 <h4 className="text-center my-3 fw-bold">GitHub Statistics</h4>
+                 <figure>
+                   <img
+                     src={`https://activity-graph.herokuapp.com/graph?username=${getGithubUser?.login}&bg_color=ffffff&color=5194F0&line=5194F0&area=true&area_color=D5E5FA`}
+                     alt="Github Activity Graph"
+                     width="100%"
+                     className="img-fluid"
+                   />
+                 </figure>
+                 <figure>
+                   <img
+                     src={`https://github-profile-trophy.vercel.app/?username=${getGithubUser?.login}&row=1&column=7&margin-w=5&no-frame=false`}
+                     alt="Github Trophies"
+                     width="100%"
+                     className="img-fluid"
+                   />
+                 </figure>
+   
+                 <figure>
+                   <img
+                     src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${getGithubUser.login}&count_private=true&include_all_commits=true&layout=compact`}
+                     alt="Github Top Languages"
+                     className="img-fluid"
+                     width="100%"
+                   />
+                 </figure>
+   
+                 <figure>
+                   <img
+                     src={`https://github-readme-stats.vercel.app/api?username=${getGithubUser.login}&show_icons=true&count_private=true&include_all_commits=true`}
+                     alt="Github Stats"
+                     width="100%"
+                     className="img-fluid"
+                   />
+                 </figure>
+   
+                 <figure>
+                   <img
+                     src={`https://github-readme-streak-stats.herokuapp.com/?user=${getGithubUser.login}`}
+                     alt="Github Streaks"
+                     width="100%"
+                     className="img-fluid"
+                   />
+                 </figure>
+               </article>
+              ): (
+                null
+              )}
 
-              <figure>
-                <img
-                  src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${getGithubUser.login}&count_private=true&include_all_commits=true&layout=compact`}
-                  alt="Github Top Languages"
-                  className="img-fluid"
-                  width="100%"
-                />
-              </figure>
-
-              <figure>
-                <img
-                  src={`https://github-readme-stats.vercel.app/api?username=${getGithubUser.login}&show_icons=true&count_private=true&include_all_commits=true`}
-                  alt="Github Stats"
-                  width="100%"
-                  className="img-fluid"
-                />
-              </figure>
-
-              <figure>
-                <img
-                  src={`https://github-readme-streak-stats.herokuapp.com/?user=${getGithubUser.login}`}
-                  alt="Github Streaks"
-                  width="100%"
-                  className="img-fluid"
-                />
-              </figure>
-            </article>
             <article className="col-lg-5">
               <h4 className="text-center my-3 fw-bold">Latest Repositories</h4>
 
