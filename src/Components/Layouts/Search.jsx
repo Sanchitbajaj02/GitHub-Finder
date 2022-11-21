@@ -19,7 +19,7 @@ const Search = ({ data, setData, type }) => {
                 className="form-control"
                 name="username"
                 id="username"
-                placeholder={type}
+                placeholder={`Search for ${type}`}
                 ref={refVar}
               />
             </div>

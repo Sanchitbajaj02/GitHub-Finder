@@ -35,7 +35,7 @@ const App = () => {
           <Route path="/orgs" element={<Organization />} />
           <Route path="/page-not-found" element={<NotFound />} />
           <Route
-            path="*"
+            path="/*"
             element={<Navigate to="/page-not-found" replace={true} />}
           />
         </Routes>

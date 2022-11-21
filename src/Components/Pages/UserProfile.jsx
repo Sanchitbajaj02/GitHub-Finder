@@ -41,8 +41,7 @@ const UserProfile = (props) => {
             onClick={() => {
               window.sessionStorage.clear();
               setStore("");
-            }}
-          >
+            }}>
             <MdArrowBackIos size={20} /> Back to Search
           </Link>
         ) : (
@@ -53,8 +52,7 @@ const UserProfile = (props) => {
             onClick={() => {
               window.sessionStorage.clear();
               setStore("");
-            }}
-          >
+            }}>
             <MdArrowBackIos size={20} /> Back to Search
           </Link>
         )}
@@ -96,7 +94,10 @@ const UserProfile = (props) => {
             {getGithubUser.blog && (
               <h5 className="mb-3">
                 <BiGlobe />{" "}
-                <a href={getGithubUser.blog} target="_blank" rel="noreferrer">
+                <a
+                  href={getGithubUser.blog}
+                  target="_blank"
+                  rel="noopener noreferrer">
                   {getGithubUser.blog}
                 </a>
               </h5>
@@ -108,8 +109,7 @@ const UserProfile = (props) => {
                 href={getGithubUser.html_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn profile-github-button"
-              >
+                className="btn profile-github-button">
                 <FaGithub size={22} /> Visit GitHub Profile
               </a>
             </div>
@@ -166,62 +166,64 @@ const UserProfile = (props) => {
       <section className="my-3">
         <div className="card card-cover shadow p-3">
           <section className="row">
-           
-              {getGithubUser?.type !== "Organization" ? (
-                 <article className="col-lg-7">
-                 <h4 className="text-center my-3 fw-bold">GitHub Statistics</h4>
-                 <figure>
-                   <img
-                     src={`https://activity-graph.herokuapp.com/graph?username=${getGithubUser?.login}&bg_color=ffffff&color=5194F0&line=5194F0&area=true&area_color=D5E5FA`}
-                     alt="Github Activity Graph"
-                     width="100%"
-                     className="img-fluid"
-                   />
-                 </figure>
-                 <figure>
-                   <img
-                     src={`https://github-profile-trophy.vercel.app/?username=${getGithubUser?.login}&row=1&column=7&margin-w=5&no-frame=false`}
-                     alt="Github Trophies"
-                     width="100%"
-                     className="img-fluid"
-                   />
-                 </figure>
-   
-                 <figure>
-                   <img
-                     src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${getGithubUser.login}&count_private=true&include_all_commits=true&layout=compact`}
-                     alt="Github Top Languages"
-                     className="img-fluid"
-                     width="100%"
-                   />
-                 </figure>
-   
-                 <figure>
-                   <img
-                     src={`https://github-readme-stats.vercel.app/api?username=${getGithubUser.login}&show_icons=true&count_private=true&include_all_commits=true`}
-                     alt="Github Stats"
-                     width="100%"
-                     className="img-fluid"
-                   />
-                 </figure>
-   
-                 <figure>
-                   <img
-                     src={`https://github-readme-streak-stats.herokuapp.com/?user=${getGithubUser.login}`}
-                     alt="Github Streaks"
-                     width="100%"
-                     className="img-fluid"
-                   />
-                 </figure>
-               </article>
-              ): (
-                null
-              )}
+            {getGithubUser?.type !== "Organization" ? (
+              <article className="col-lg-7">
+                <h4 className="text-center my-3 fw-bold">GitHub Statistics</h4>
+                <figure>
+                  <img
+                    src={`https://activity-graph.herokuapp.com/graph?username=${getGithubUser?.login}&bg_color=ffffff&color=5194F0&line=5194F0&area=true&area_color=D5E5FA`}
+                    alt="Github Activity Graph"
+                    width="100%"
+                    className="img-fluid"
+                  />
+                </figure>
+                <figure>
+                  <img
+                    src={`https://github-profile-trophy.vercel.app/?username=${getGithubUser?.login}&row=1&column=7&margin-w=5&no-frame=false`}
+                    alt="Github Trophies"
+                    width="100%"
+                    className="img-fluid"
+                  />
+                </figure>
 
-            <article className="col-lg-5">
+                <figure>
+                  <img
+                    src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${getGithubUser.login}&count_private=true&include_all_commits=true&layout=compact`}
+                    alt="Github Top Languages"
+                    className="img-fluid"
+                    width="100%"
+                  />
+                </figure>
+
+                <figure>
+                  <img
+                    src={`https://github-readme-stats.vercel.app/api?username=${getGithubUser.login}&show_icons=true&count_private=true&include_all_commits=true`}
+                    alt="Github Stats"
+                    width="100%"
+                    className="img-fluid"
+                  />
+                </figure>
+
+                <figure>
+                  <img
+                    src={`https://github-readme-streak-stats.herokuapp.com/?user=${getGithubUser.login}`}
+                    alt="Github Streaks"
+                    width="100%"
+                    className="img-fluid"
+                  />
+                </figure>
+              </article>
+            ) : null}
+
+            <article
+              className={
+                getGithubUser?.type !== "Organization"
+                  ? "col-lg-5"
+                  : "col-lg-12"
+              }>
               <h4 className="text-center my-3 fw-bold">Latest Repositories</h4>
 
-              <Repositories username={username} />
+              <Repositories getGithubUser={getGithubUser} username={username} />
             </article>
           </section>
         </div>

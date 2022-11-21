@@ -146,3 +146,13 @@ input[type="text"] {
   padding: 0.3rem 0.75rem;
   font-weight: 600;
 }
+
+.link-hover {
+  color: #21262d;
+  text-decoration: none;
+}
+
+.link-hover:hover {
+  color: var(--main-color);
+  text-decoration: none;
+}

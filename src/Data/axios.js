@@ -58,7 +58,7 @@ export const getUserData = async (username) => {
 export const getUserRepos = async (username) => {
   const promise = new Promise((resolve, reject) => {
     instance
-      .get(`users/${username}/repos?per_page=10&sort=created:desc`)
+      .get(`users/${username}/repos?per_page=9&sort=created:desc`)
       .then((query) => {
         resolve(query.data);
       })

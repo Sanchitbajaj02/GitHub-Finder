@@ -5,10 +5,19 @@ import { FaEye, FaInfo, FaLink, FaStar, FaUtensils } from "react-icons/fa";
 const RepoCard = ({ repo }) => {
   return (
     <>
-      <div className="card text-dark border-0 shadow">
+      <div
+        className="card text-dark border-0 shadow"
+        style={{ height: "100%" }}>
         <div className="card-body">
           <h4 className="card-title mb-3">
-            <a href={repo?.html_url} target="_blank" rel="noopener noreferrer" className="text-dark text-decoration-none"><FaLink size={20} /> {repo?.name}</a>
+            <a
+              href={repo?.html_url}
+              target="_blank"
+              title={repo?.name}
+              rel="noopener noreferrer"
+              className=" link-hover">
+              <FaLink size={20} /> {repo?.name}
+            </a>
           </h4>
           {repo?.description && (
             <p className="card-text text-dark">{repo?.description}</p>
