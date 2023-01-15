@@ -3,11 +3,11 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Raleway:wght@400;600;800&display=swap");
 
 :root {
-  /* default: 225, 355 */
+  /* default: 225, 355,295 */
   /* --hue-color: 5; 
   --main-color: hsl(var(--hue-color), 72%, 50%); */
 
-  --hue-color: 295;
+  --hue-color: 200;
   --main-color: hsl(var(--hue-color), 50%, 25%);
 
   --font-noto-serif: "Noto Serif", serif;
@@ -141,10 +141,11 @@ input[type="text"] {
 }
 
 .badge {
-  /* margin-left: 10px; */
+  /* margin-left: 5px; */
   border-radius: 50px;
-  padding: 0.3rem 0.75rem;
+  padding: 0.3rem 0.8rem;
   font-weight: 600;
+  font-size: 16px;
 }
 
 .link-hover {

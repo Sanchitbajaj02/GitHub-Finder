@@ -41,7 +41,8 @@ const UserProfile = (props) => {
             onClick={() => {
               window.sessionStorage.clear();
               setStore("");
-            }}>
+            }}
+          >
             <MdArrowBackIos size={20} /> Back to Search
           </Link>
         ) : (
@@ -52,7 +53,8 @@ const UserProfile = (props) => {
             onClick={() => {
               window.sessionStorage.clear();
               setStore("");
-            }}>
+            }}
+          >
             <MdArrowBackIos size={20} /> Back to Search
           </Link>
         )}
@@ -73,7 +75,7 @@ const UserProfile = (props) => {
               <h2 className="me-3">{getGithubUser?.name}</h2>
 
               {getGithubUser?.hireable ? (
-                <span className="badge bg-info text-dark">Hireable</span>
+                <span className="badge bg-success text-light">Hireable</span>
               ) : getGithubUser?.type === "User" ? (
                 <span className="badge bg-danger text-light">Not-Hireable</span>
               ) : null}
@@ -97,7 +99,8 @@ const UserProfile = (props) => {
                 <a
                   href={getGithubUser.blog}
                   target="_blank"
-                  rel="noopener noreferrer">
+                  rel="noopener noreferrer"
+                >
                   {getGithubUser.blog}
                 </a>
               </h5>
@@ -109,7 +112,8 @@ const UserProfile = (props) => {
                 href={getGithubUser.html_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn profile-github-button">
+                className="btn profile-github-button"
+              >
                 <FaGithub size={22} /> Visit GitHub Profile
               </a>
             </div>
@@ -171,7 +175,7 @@ const UserProfile = (props) => {
                 <h4 className="text-center my-3 fw-bold">GitHub Statistics</h4>
                 <figure>
                   <img
-                    src={`https://activity-graph.herokuapp.com/graph?username=${getGithubUser?.login}&bg_color=ffffff&color=5194F0&line=5194F0&area=true&area_color=D5E5FA`}
+                    src={`https://github-readme-activity-graph.cyclic.app/graph?username=${getGithubUser?.login}&bg_color=ffffff&color=5194F0&line=5194F0&area=true&area_color=D5E5FA`}
                     alt="Github Activity Graph"
                     width="100%"
                     className="img-fluid"
@@ -220,7 +224,8 @@ const UserProfile = (props) => {
                 getGithubUser?.type !== "Organization"
                   ? "col-lg-5"
                   : "col-lg-12"
-              }>
+              }
+            >
               <h4 className="text-center my-3 fw-bold">Latest Repositories</h4>
 
               <Repositories getGithubUser={getGithubUser} username={username} />
