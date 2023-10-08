@@ -2,12 +2,14 @@
 
 ## ⚡ Project Status
 
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103?color=greendark)](https://github.com/ellerbrock/open-source-badges/)
 [![Contributers](https://img.shields.io/github/contributors/Sanchitbajaj02/GitHub-Finder?color=greendark)](https://github.com/Sanchitbajaj02/GitHub-Finder/graphs/contributors)
 [![license MIT](https://img.shields.io/github/license/Sanchitbajaj02/GitHub-Finder?color=greendark)](https://github.com/Sanchitbajaj02/GitHub-Finder/blob/master/LICENSE)
-[![Issues](https://img.shields.io/github/issues/Sanchitbajaj02/GitHub-Finder?color=greendark)](https://github.com/Sanchitbajaj02/GitHub-Finder/issues)
+[![Issues](https://img.shields.io/github/issues/Sanchitbajaj02/GitHub-Finder?color=greendark&logo=github)](https://github.com/Sanchitbajaj02/GitHub-Finder/issues)
+[![Forks](https://img.shields.io/github/forks/Sanchitbajaj02/GitHub-Finder?color=greendark&logo=github)](https://github.com/Sanchitbajaj02/GitHub-Finder/network/members)
 [![Pull Requests](https://img.shields.io/github/issues-pr/Sanchitbajaj02/GitHub-Finder?color=greendark)](https://github.com/Sanchitbajaj02/GitHub-Finder/issues)
-[![Forks](https://img.shields.io/github/forks/Sanchitbajaj02/GitHub-Finder?color=greendark)](https://github.com/Sanchitbajaj02/GitHub-Finder/network/members)
 [![Stars](https://img.shields.io/github/stars/Sanchitbajaj02/GitHub-Finder?color=greendark)](https://github.com/Sanchitbajaj02/GitHub-Finder/stargazers)
+![GitHub repo size](https://img.shields.io/github/repo-size/Sanchitbajaj02/GitHub-Finder?color=greendark)
 
 <h2 align="center">This project will be entered in Hacktoberfest 2023</h2>
 

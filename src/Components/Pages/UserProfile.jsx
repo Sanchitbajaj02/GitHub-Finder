@@ -15,9 +15,9 @@ import { getUserData } from '../../Data/axios'
 
 import Repositories from '../Layouts/Repositories'
 
-const UserProfile = (props) => {
+const UserProfile = () => {
   const [getGithubUser, setGithubUser] = useState({})
-  const { store, setStore } = useContext(GithubContext)
+  const { setStore } = useContext(GithubContext)
 
   const { username } = useParams()
 
@@ -176,6 +176,14 @@ const UserProfile = (props) => {
                 <figure>
                   <img
                     src={`https://github-readme-activity-graph.cyclic.app/graph?username=${getGithubUser?.login}&bg_color=ffffff&color=5194F0&line=5194F0&area=true&area_color=D5E5FA`}
+                    alt="Github Activity Graph"
+                    width="100%"
+                    className="img-fluid"
+                  />
+                </figure>
+                <figure>
+                  <img
+                    src={`https://github-readme-activity-graph.vercel.app/graph?username=${getGithubUser?.login}&bg_color=ffffff&color=000111&line=5194f0&point=000000&area=true&hide_border=true&area_color=D5E5FA`}
                     alt="Github Activity Graph"
                     width="100%"
                     className="img-fluid"

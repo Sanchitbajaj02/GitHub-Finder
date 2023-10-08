@@ -2,9 +2,9 @@
   "name": "github-finder",
   "version": "0.1.0",
   "private": true,
-  "homepage": "*",
+  "homepage": "/",
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
