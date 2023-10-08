@@ -1,44 +1,44 @@
-import React, { useState, useEffect } from "react";
-import UserCard from "../Layouts/UserCard";
+import React, { useState, useEffect } from 'react'
+import UserCard from '../Layouts/UserCard'
 
-import { AiOutlineOrderedList } from "react-icons/ai";
-import { BsFillGridFill } from "react-icons/bs";
+import { AiOutlineOrderedList } from 'react-icons/ai'
+import { BsFillGridFill } from 'react-icons/bs'
 
-import { searchUsers } from "../../Data/axios";
+import { searchUsers } from '../../Data/axios'
 
-import Search from "../Layouts/Search";
+import Search from '../Layouts/Search'
 
 // import Search from "../Layouts/Search";
 const Home = () => {
-  const [userData, setUserData] = useState([]);
+  const [userData, setUserData] = useState([])
 
-  const [username, setUsername] = useState(null);
+  const [username, setUsername] = useState(null)
 
   const filterbyType = (userArray) => {
-    return userArray.filter((e) => e.type === "Organization");
-  };
+    return userArray.filter((e) => e.type === 'Organization')
+  }
 
   useEffect(() => {
     if (username !== null) {
       searchUsers(username)
         .then((res) => {
-          console.log(res);
-          setUserData(filterbyType(res));
+          console.log(res)
+          setUserData(filterbyType(res))
         })
-        .catch((err) => console.log(err));
+        .catch((err) => console.log(err))
     }
-  }, [username]);
+  }, [username])
 
-  console.log(userData);
+  console.log(userData)
 
   return (
     <React.Fragment>
       <section>
         <h2 className="text-center mt-4">Search for Organization</h2>
       </section>
-      <Search data={username} setData={setUsername} type={"organization"} />
+      <Search data={username} setData={setUsername} type={'organization'} />
       <section>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           {userData.length === 1 ? (
             <h6 className="text-secondary">{userData.length} result</h6>
           ) : (
@@ -69,13 +69,13 @@ const Home = () => {
                     type={data?.type}
                   />
                 </div>
-              );
+              )
             })}
           </div>
         )}
       </section>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

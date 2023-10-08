@@ -1,46 +1,46 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Link, useParams } from "react-router-dom";
-import GithubContext from "../../Context/GithubContext";
+import React, { useState, useEffect, useContext } from 'react'
+import { Link, useParams } from 'react-router-dom'
+import GithubContext from '../../Context/GithubContext'
 
-import { MdArrowBackIos } from "react-icons/md";
-import { BiMap, BiGlobe, BiNote } from "react-icons/bi";
+import { MdArrowBackIos } from 'react-icons/md'
+import { BiMap, BiGlobe, BiNote } from 'react-icons/bi'
 import {
   FaCodepen,
   FaStore,
   FaUserFriends,
   FaUsers,
   FaGithub,
-} from "react-icons/fa";
-import { getUserData } from "../../Data/axios";
+} from 'react-icons/fa'
+import { getUserData } from '../../Data/axios'
 
-import Repositories from "../Layouts/Repositories";
+import Repositories from '../Layouts/Repositories'
 
 const UserProfile = (props) => {
-  const [getGithubUser, setGithubUser] = useState({});
-  const { store, setStore } = useContext(GithubContext);
+  const [getGithubUser, setGithubUser] = useState({})
+  const { store, setStore } = useContext(GithubContext)
 
-  const { username } = useParams();
+  const { username } = useParams()
 
   useEffect(() => {
     getUserData(username)
       .then((resp) => {
-        setGithubUser(resp);
+        setGithubUser(resp)
       })
-      .catch((err) => console.log(err));
-  }, [username]);
+      .catch((err) => console.log(err))
+  }, [username])
 
   return (
     <React.Fragment>
       {/* back button */}
       <section className="my-3">
-        {getGithubUser.type === "User" ? (
+        {getGithubUser.type === 'User' ? (
           <Link
             to="/users"
             type="button"
             className="btn  mt-4"
             onClick={() => {
-              window.sessionStorage.clear();
-              setStore("");
+              window.sessionStorage.clear()
+              setStore('')
             }}
           >
             <MdArrowBackIos size={20} /> Back to Search
@@ -51,8 +51,8 @@ const UserProfile = (props) => {
             type="button"
             className="btn  mt-4"
             onClick={() => {
-              window.sessionStorage.clear();
-              setStore("");
+              window.sessionStorage.clear()
+              setStore('')
             }}
           >
             <MdArrowBackIos size={20} /> Back to Search
@@ -76,7 +76,7 @@ const UserProfile = (props) => {
 
               {getGithubUser?.hireable ? (
                 <span className="badge bg-success text-light">Hireable</span>
-              ) : getGithubUser?.type === "User" ? (
+              ) : getGithubUser?.type === 'User' ? (
                 <span className="badge bg-danger text-light">Not-Hireable</span>
               ) : null}
             </div>
@@ -95,7 +95,7 @@ const UserProfile = (props) => {
             )}
             {getGithubUser.blog && (
               <h5 className="mb-3">
-                <BiGlobe />{" "}
+                <BiGlobe />{' '}
                 <a
                   href={getGithubUser.blog}
                   target="_blank"
@@ -170,7 +170,7 @@ const UserProfile = (props) => {
       <section className="my-3">
         <div className="card card-cover shadow p-3">
           <section className="row">
-            {getGithubUser?.type !== "Organization" ? (
+            {getGithubUser?.type !== 'Organization' ? (
               <article className="col-lg-7">
                 <h4 className="text-center my-3 fw-bold">GitHub Statistics</h4>
                 <figure>
@@ -221,9 +221,9 @@ const UserProfile = (props) => {
 
             <article
               className={
-                getGithubUser?.type !== "Organization"
-                  ? "col-lg-5"
-                  : "col-lg-12"
+                getGithubUser?.type !== 'Organization'
+                  ? 'col-lg-5'
+                  : 'col-lg-12'
               }
             >
               <h4 className="text-center my-3 fw-bold">Latest Repositories</h4>
@@ -234,7 +234,7 @@ const UserProfile = (props) => {
         </div>
       </section>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default UserProfile;
+export default UserProfile

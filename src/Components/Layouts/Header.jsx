@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Header = (props) => {
   return (
@@ -17,7 +17,8 @@ const Header = (props) => {
             data-bs-target="#navID"
             aria-controls="navID"
             aria-expanded="false"
-            aria-label="Toggle navigation">
+            aria-label="Toggle navigation"
+          >
             <span className="navbar-toggler-icon"></span>
           </button>
 
@@ -48,7 +49,7 @@ const Header = (props) => {
         </div>
       </nav>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

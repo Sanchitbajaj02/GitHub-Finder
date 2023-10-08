@@ -1,12 +1,12 @@
-import React, { useRef } from "react";
+import React, { useRef } from 'react'
 
 const Search = ({ data, setData, type }) => {
-  const refVar = useRef();
+  const refVar = useRef()
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    setData(refVar.current.value);
-  };
+    event.preventDefault()
+    setData(refVar.current.value)
+  }
 
   return (
     <React.Fragment>
@@ -30,7 +30,7 @@ const Search = ({ data, setData, type }) => {
         </div>
       </form>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default Search;
+export default Search

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
-import Header from "./Components/Layouts/Header";
+import Header from './Components/Layouts/Header'
 
 import {
   About,
@@ -9,18 +9,18 @@ import {
   Organization,
   UserProfile,
   Users,
-} from "./Components/pages.index";
+} from './Components/pages.index'
 
-import GithubContext from "./Context/GithubContext";
+import GithubContext from './Context/GithubContext'
 
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes, Navigate } from 'react-router-dom'
 
-const username = window.sessionStorage.getItem("username");
+const username = window.sessionStorage.getItem('username')
 
 const App = () => {
   const [store, setStore] = useState({
     username: username || null,
-  });
+  })
 
   return (
     <GithubContext.Provider value={{ store, setStore }}>
@@ -41,7 +41,7 @@ const App = () => {
         </Routes>
       </div>
     </GithubContext.Provider>
-  );
-};
+  )
+}
 
-export default App;
+export default App

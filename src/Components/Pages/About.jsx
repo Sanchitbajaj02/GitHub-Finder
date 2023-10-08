@@ -1,5 +1,5 @@
-import { Fragment } from "react";
-import React from "react";
+import { Fragment } from 'react'
+import React from 'react'
 
 const About = () => {
   return (
@@ -33,22 +33,24 @@ const About = () => {
           <h4 className="d-inline">Contributors:- </h4>
           <ul>
             <li className="fs-5">
-              Sanchit Bajaj{" "}
+              Sanchit Bajaj{' '}
               <a
                 href="http://github.com/sanchitbajaj02/"
                 target="_blank"
                 className="link-hover"
-                rel="noreferrer noopener">
+                rel="noreferrer noopener"
+              >
                 @sanchitbajaj02
               </a>
             </li>
             <li className="fs-5">
-              Sahil Gill{" "}
+              Sahil Gill{' '}
               <a
                 href="https://github.com/SahilGill003"
                 target="_blank"
                 className="link-hover"
-                rel="noreferrer noopener">
+                rel="noreferrer noopener"
+              >
                 @SahilGill003
               </a>
             </li>
@@ -56,7 +58,7 @@ const About = () => {
         </article>
       </section>
     </Fragment>
-  );
-};
+  )
+}
 
-export default About;
+export default About

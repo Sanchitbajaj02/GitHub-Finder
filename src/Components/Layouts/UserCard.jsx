@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 const UserCard = ({ image, username, githubUrl, type }) => {
   return (
@@ -8,10 +8,10 @@ const UserCard = ({ image, username, githubUrl, type }) => {
         <img src={image} className="img-fluid card-img" alt={username} />
         <div className="card-body">
           <h5 className="card-title text-center">{username}</h5>
-          {type === "User" ? (
+          {type === 'User' ? (
             <Link
               type="button"
-              to={"/user/" + username}
+              to={'/user/' + username}
               className="btn btn-custom-color my-1"
             >
               View More
@@ -19,7 +19,7 @@ const UserCard = ({ image, username, githubUrl, type }) => {
           ) : (
             <Link
               type="button"
-              to={"/org/" + username}
+              to={'/org/' + username}
               className="btn btn-custom-color my-1"
             >
               View More
@@ -37,7 +37,7 @@ const UserCard = ({ image, username, githubUrl, type }) => {
         </div>
       </div>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default UserCard;
+export default UserCard
