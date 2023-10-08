@@ -40,7 +40,7 @@ This GitHub Finder differs from others in the sense that, it not only shows the 
 
 ## 🛡️ License
 
-Palettegram is licensed under the MIT License - see the [LICENSE](Licence) file for details.
+Palettegram is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🤔 How to contribute ?
 
