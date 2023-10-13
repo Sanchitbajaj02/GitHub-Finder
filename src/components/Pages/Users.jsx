@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Search from '../Layouts/Search'
 import UserCard from '../Layouts/UserCard'
 
-import { searchUsers } from '../../Data/axios'
+import { searchUsers } from '../../utils/axios'
 
 import { AiOutlineOrderedList } from 'react-icons/ai'
 import { BsFillGridFill } from 'react-icons/bs'

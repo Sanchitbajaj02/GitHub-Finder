@@ -12,7 +12,7 @@ import {
   FaUsers,
   FaGithub,
 } from 'react-icons/fa'
-import { getUserData } from '../../Data/axios'
+import { getUserData } from '../../utils/axios'
 
 import Repositories from '../Layouts/Repositories'
 

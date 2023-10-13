@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import RepoCard from './RepoCard'
 
-import { getUserRepos } from '../../Data/axios'
+import { getUserRepos } from '../../utils/axios'
 
 const Repositories = ({ getGithubUser, username }) => {
   const [getGithubRepos, setGithubRepos] = useState([])

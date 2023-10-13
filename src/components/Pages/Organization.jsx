@@ -4,7 +4,7 @@ import UserCard from '../Layouts/UserCard'
 import { AiOutlineOrderedList } from 'react-icons/ai'
 import { BsFillGridFill } from 'react-icons/bs'
 
-import { searchUsers } from '../../Data/axios'
+import { searchUsers } from '../../utils/axios'
 
 import Search from '../Layouts/Search'
 
