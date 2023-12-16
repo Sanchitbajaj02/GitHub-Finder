@@ -10,7 +10,7 @@ const Search = ({ data, setData, type }) => {
 
   return (
     <React.Fragment>
-      <form className="my-5" onSubmit={handleSubmit} method="GET">
+      <form className="my-4" onSubmit={handleSubmit} method="GET">
         <div className="row">
           <div className="col-md-9 my-3">
             <div className="form-group">

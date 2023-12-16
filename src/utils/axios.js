@@ -5,7 +5,11 @@ const instance = axios.create({
   timeout: 2000,
 })
 
-// search users
+/**
+ * @abstract search user data by username
+ * @param {string} username
+ * @returns {Promise}
+ */
 export const searchUsers = async (username) => {
   const promise = new Promise((resolve, reject) => {
     instance
@@ -16,13 +20,16 @@ export const searchUsers = async (username) => {
       .catch((error) => {
         reject(error)
       })
-
-    // return query.data.items;
   })
 
   return promise
 }
 
+/**
+ * @abstract seach organization based on the organization name
+ * @param {string} organization
+ * @returns {Promise}
+ */
 export const searchOrganization = async (organization) => {
   const promise = new Promise((resolve, reject) => {
     instance
@@ -37,6 +44,11 @@ export const searchOrganization = async (organization) => {
   return promise
 }
 
+/**
+ * @abstract get single user data based on username
+ * @param {string} username
+ * @returns {Promise}
+ */
 export const getUserData = async (username) => {
   const promise = new Promise((resolve, reject) => {
     instance
@@ -52,7 +64,11 @@ export const getUserData = async (username) => {
   return promise
 }
 
-// get user repositories
+/**
+ * @abstract get the list of repositories of a single user
+ * @param {string} username
+ * @returns
+ */
 export const getUserRepos = async (username) => {
   const promise = new Promise((resolve, reject) => {
     instance
