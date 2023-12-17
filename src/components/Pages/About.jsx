@@ -1,5 +1,4 @@
-
-const About = () => {
+export default function About() {
   return (
     <>
       <section className="card card-cover shadow p-3 m-5">
@@ -58,5 +57,3 @@ const About = () => {
     </>
   )
 }
-
-export default About

@@ -17,7 +17,7 @@ import { getUserData } from '../../utils/axios'
 
 import Repositories from '../Layouts/Repositories'
 
-const UserProfile = () => {
+export default function UserProfile() {
   const [getGithubUser, setGithubUser] = useState({})
   const { setStore } = useGithubContext()
 
@@ -250,5 +250,3 @@ const UserProfile = () => {
     </React.Fragment>
   )
 }
-
-export default UserProfile

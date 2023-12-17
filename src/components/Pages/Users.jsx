@@ -7,7 +7,7 @@ import { searchUsers } from '../../utils/axios'
 import { AiOutlineOrderedList } from 'react-icons/ai'
 import { BsFillGridFill } from 'react-icons/bs'
 
-const Home = () => {
+export default function User() {
   const [userData, setUserData] = useState([])
 
   const [username, setUsername] = useState(null)
@@ -72,5 +72,3 @@ const Home = () => {
     </React.Fragment>
   )
 }
-
-export default Home

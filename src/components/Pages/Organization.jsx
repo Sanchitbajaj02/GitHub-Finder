@@ -8,8 +8,7 @@ import { searchUsers } from '../../utils/axios'
 
 import Search from '../Layouts/Search'
 
-// import Search from "../Layouts/Search";
-const Home = () => {
+export default function Organization() {
   const [userData, setUserData] = useState([])
 
   const [username, setUsername] = useState(null)
@@ -77,5 +76,3 @@ const Home = () => {
     </React.Fragment>
   )
 }
-
-export default Home

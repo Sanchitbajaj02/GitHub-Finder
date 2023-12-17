@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const Home = () => {
+export default function Home() {
   return (
     <>
       <section className="my-5">
@@ -39,5 +39,3 @@ const Home = () => {
     </>
   )
 }
-
-export default Home
