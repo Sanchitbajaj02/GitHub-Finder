@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const Home = () => {
   return (
     <>
-      <section className="container my-5">
+      <section className="my-5">
         <article className="text-center">
           <h1 className="fw-semibold">Welcome to GitHub Finder 👋</h1>
           <p>

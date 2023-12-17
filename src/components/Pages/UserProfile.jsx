@@ -11,6 +11,7 @@ import {
   FaUserFriends,
   FaUsers,
   FaGithub,
+  FaTwitter,
 } from 'react-icons/fa'
 import { getUserData } from '../../utils/axios'
 
@@ -106,6 +107,18 @@ const UserProfile = () => {
                 </a>
               </h5>
             )}
+            {getGithubUser.twitter_username && (
+              <h5 className="mb-3">
+                <FaTwitter />{' '}
+                <a
+                  href={`https://twitter.com/${getGithubUser.twitter_username}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {getGithubUser.twitter_username}
+                </a>
+              </h5>
+            )}
 
             <div className="my-2">
               <a
@@ -176,14 +189,6 @@ const UserProfile = () => {
                 <h4 className="text-center my-3 fw-bold">GitHub Statistics</h4>
                 <figure>
                   <img
-                    src={`https://github-readme-activity-graph.cyclic.app/graph?username=${getGithubUser?.login}&bg_color=ffffff&color=5194F0&line=5194F0&area=true&area_color=D5E5FA`}
-                    alt="Github Activity Graph"
-                    width="100%"
-                    className="img-fluid"
-                  />
-                </figure>
-                <figure>
-                  <img
                     src={`https://github-readme-activity-graph.vercel.app/graph?username=${getGithubUser?.login}&bg_color=ffffff&color=000111&line=5194f0&point=000000&area=true&hide_border=true&area_color=D5E5FA`}
                     alt="Github Activity Graph"
                     width="100%"
@@ -210,7 +215,7 @@ const UserProfile = () => {
 
                 <figure>
                   <img
-                    src={`https://github-readme-stats.vercel.app/api?username=${getGithubUser.login}&show_icons=true&count_private=true&include_all_commits=true`}
+                    src={`https://github-readme-stats.vercel.app/api?username=${getGithubUser.login}&show_icons=true&count_private=true&include_all_commits=true&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage`}
                     alt="Github Stats"
                     width="100%"
                     className="img-fluid"
