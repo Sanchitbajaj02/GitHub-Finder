@@ -26,7 +26,6 @@ p {
   font-family: var(--font-poppins);
 }
 
-
 .navbar-bg-color {
   background-color: var(--main-color) !important;
   font-family: var(--font-poppins);
@@ -97,7 +96,6 @@ input[type='text'] {
   margin: 1rem auto;
   border-radius: 50%;
 }
-
 
 .profile-github-button {
   outline: none;

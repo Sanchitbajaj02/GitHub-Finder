@@ -156,7 +156,7 @@ export default function UserProfile() {
                   href={`https://twitter.com/${getGithubUser.twitter_username}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className='link-card-highlight'
+                  className="link-card-highlight"
                 >
                   {getGithubUser.twitter_username}
                 </a>
