@@ -2,7 +2,6 @@
   "name": "github-finder",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "engines": {
     "node": ">=16.0.0"
   },
@@ -11,7 +10,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky install"
   },
   "dependencies": {
     "axios": "^1.5.1",
@@ -22,6 +22,8 @@
     "react-router-dom": "^6.16.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.0.0",
@@ -29,6 +31,8 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
     "prettier": "^3.0.3",
     "vite": "^4.3.2"
   }
