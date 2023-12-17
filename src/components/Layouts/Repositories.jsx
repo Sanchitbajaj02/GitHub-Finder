@@ -3,7 +3,7 @@ import RepoCard from './RepoCard'
 
 import { getUserRepos } from '../../utils/axios'
 
-const Repositories = ({ getGithubUser, username }) => {
+const Repositories = ({ username }) => {
   const [getGithubRepos, setGithubRepos] = useState([])
 
   useEffect(() => {
@@ -14,29 +14,17 @@ const Repositories = ({ getGithubUser, username }) => {
       .catch((err) => console.log(err))
   }, [username])
 
-  console.log('data', getGithubRepos)
-
   return (
     <>
-      {getGithubUser.type === 'User' ? (
-        getGithubRepos.map((repo, i) => {
+      <div className="row">
+        {getGithubRepos.map((repo, i) => {
           return (
-            <div className="mb-3" key={i}>
+            <div className="col-12 col-md-6 col-lg-4 mb-3" key={i}>
               <RepoCard repo={repo} />
             </div>
           )
-        })
-      ) : (
-        <div className="row">
-          {getGithubRepos.map((repo, i) => {
-            return (
-              <div className="col-md-4 mb-3" key={i}>
-                <RepoCard repo={repo} />
-              </div>
-            )
-          })}
-        </div>
-      )}
+        })}
+      </div>
     </>
   )
 }

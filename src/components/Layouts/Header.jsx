@@ -36,7 +36,7 @@ const Header = () => {
 
   return (
     <React.Fragment>
-      <nav className="navbar navbar-expand-md navbar-dark navbar-bg-color">
+      <nav className="navbar navbar-expand-lg navbar-dark navbar-bg-color">
         <div className="container">
           <a className="navbar-brand fw-semibold" href="/">
             GitHub Finder

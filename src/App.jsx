@@ -11,7 +11,7 @@ import {
   Organization,
   UserProfile,
   Users,
-  Documentation
+  Documentation,
 } from './components/pages.index'
 
 function App() {
