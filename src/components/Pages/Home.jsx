@@ -20,7 +20,7 @@ export default function Home() {
                 to="/users"
                 className="card-body link-card-highlight text-center"
               >
-                <h4 className="card-title">User Search</h4>
+                <h4 className="card-title fw-semibold">User Search</h4>
               </Link>
             </div>
           </div>
@@ -30,7 +30,7 @@ export default function Home() {
                 to="/orgs"
                 className="card-body link-card-highlight text-center"
               >
-                <h4 className="card-title">Organization Search</h4>
+                <h4 className="card-title fw-semibold">Organization Search</h4>
               </Link>
             </div>
           </div>

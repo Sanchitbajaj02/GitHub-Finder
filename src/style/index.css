@@ -9,9 +9,9 @@
   /* --hue-color: 5; 
   --main-color: hsl(var(--hue-color), 72%, 50%); */
 
-  --hue-color: 200;
-  --main-color: hsl(var(--hue-color), 50%, 25%);
-
+  --hue-color: 210;
+  --main-color: hsl(var(--hue-color), 90%, 10%);
+  --secondary-color: hsl(var(--hue-color), 90%, 75%);
   --font-poppins: 'Poppins', sans-serif;
 }
 
@@ -80,14 +80,15 @@ input[type='text'] {
 
 .card-shadow {
   margin: 1rem auto;
+  border: none;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
 }
 
 .card-shadow:hover {
-  box-shadow: 0 8px 50px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 64px rgba(0, 0, 0, 0.1);
 }
 
 .card-img {

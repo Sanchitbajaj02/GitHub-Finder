@@ -48,7 +48,7 @@ export default function UserProfile() {
           <Link
             to="/users"
             type="button"
-            className="btn"
+            className="btn fw-medium"
             onClick={() => {
               window.sessionStorage.clear()
               setStore({
@@ -64,7 +64,7 @@ export default function UserProfile() {
           <Link
             to="/orgs"
             type="button"
-            className="btn  mt-4"
+            className="btn fw-medium"
             onClick={() => {
               window.sessionStorage.clear()
               setStore({
@@ -86,7 +86,7 @@ export default function UserProfile() {
             <img
               src={getGithubUser?.avatar_url}
               alt={getGithubUser?.login}
-              className="profile-card-img img-fluid overflow-hidden rounded-2 shadow-lg"
+              className="img-fluid overflow-hidden rounded-2 shadow-lg"
               width={'65%'}
             />
           </div>
@@ -213,7 +213,7 @@ export default function UserProfile() {
       </section>
 
       {getGithubUser.type && getGithubUser?.type === 'User' && (
-        <section className="card border-0 rounded-3 shadow p-3 my-4">
+        <section className="card card-shadow p-3 my-4">
           <h2 className="h3 text-center fw-bold mb-4">
             @{getGithubUser?.login}&#39;s Statistics
           </h2>
@@ -282,7 +282,7 @@ export default function UserProfile() {
         </section>
       )}
 
-      <section className="card border-0 rounded-3 shadow p-3 my-4">
+      <section className="card card-shadow p-3 my-4">
         <h2 className="h3 text-center fw-bold mb-4">
           @{getGithubUser?.login}&#39;s Latest Repositories
         </h2>
