@@ -8,8 +8,7 @@ import { searchUsers } from '../../utils/axios'
 
 import Search from '../Layouts/Search'
 
-// import Search from "../Layouts/Search";
-const Home = () => {
+export default function Organization() {
   const [userData, setUserData] = useState([])
 
   const [username, setUsername] = useState(null)
@@ -33,51 +32,47 @@ const Home = () => {
 
   return (
     <React.Fragment>
-      <section className="container">
-        <h2 className="text-center mt-4">Search for Organization</h2>
+      <h2 className="text-center mt-4">Search for Organization</h2>
 
-        <Search data={username} setData={setUsername} type={'organization'} />
+      <Search data={username} setData={setUsername} type={'organization'} />
 
-        <article>
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            {userData.length === 1 ? (
-              <h6 className="text-secondary">{userData.length} result</h6>
-            ) : (
-              <h6 className="text-secondary">{userData.length} results</h6>
-            )}
-            <div>
-              <button className="btn px-1">
-                <AiOutlineOrderedList size={20} />
-              </button>
-              <button className="btn px-1">
-                <BsFillGridFill size={20} />
-              </button>
-            </div>
-          </div>
-          {userData.length === 0 ? (
-            <div className="row justify-content-center mt-4">
-              <h5 className="text-secondary ">No results found</h5>
-            </div>
+      <article>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          {userData.length === 1 ? (
+            <h6 className="text-secondary">{userData.length} result</h6>
           ) : (
-            <div className="row">
-              {userData?.map((data, index) => {
-                return (
-                  <div className="col-lg-4 col-md-6" key={index}>
-                    <UserCard
-                      image={data?.avatar_url}
-                      username={data?.login}
-                      githubUrl={data?.html_url}
-                      type={data?.type}
-                    />
-                  </div>
-                )
-              })}
-            </div>
+            <h6 className="text-secondary">{userData.length} results</h6>
           )}
-        </article>
-      </section>
+          <div>
+            <button className="btn px-1">
+              <AiOutlineOrderedList size={20} />
+            </button>
+            <button className="btn px-1">
+              <BsFillGridFill size={20} />
+            </button>
+          </div>
+        </div>
+        {userData.length === 0 ? (
+          <div className="row justify-content-center mt-4">
+            <h5 className="text-secondary ">No results found</h5>
+          </div>
+        ) : (
+          <div className="row">
+            {userData?.map((data, index) => {
+              return (
+                <div className="col-lg-4 col-md-6" key={index}>
+                  <UserCard
+                    image={data?.avatar_url}
+                    username={data?.login}
+                    githubUrl={data?.html_url}
+                    type={data?.type}
+                  />
+                </div>
+              )
+            })}
+          </div>
+        )}
+      </article>
     </React.Fragment>
   )
 }
-
-export default Home

@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
+// import { VscGithub } from 'react-icons/vsc'
+import { FaGithub } from 'react-icons/fa'
 
 const Header = () => {
   const currLocation = useLocation()
@@ -11,19 +13,24 @@ const Header = () => {
       slug: '/',
     },
     {
-      id: 1,
+      id: 2,
       navItem: 'About',
       slug: '/about',
     },
     {
-      id: 1,
-      navItem: 'Search user',
+      id: 3,
+      navItem: 'Search users',
       slug: '/users',
     },
     {
-      id: 1,
+      id: 4,
       navItem: 'Search organizations',
       slug: '/orgs',
+    },
+    {
+      id: 4,
+      navItem: 'Docs',
+      slug: '/docs',
     },
   ]
 
@@ -55,7 +62,7 @@ const Header = () => {
                     <li className="nav-item" key={i}>
                       <Link
                         to={items.slug}
-                        className={`nav-link fw-medium ${
+                        className={`nav-link ${
                           currLocation.pathname === items.slug ? 'active' : ''
                         } `}
                       >
@@ -64,6 +71,15 @@ const Header = () => {
                     </li>
                   )
                 })}
+              <li className="nav-item">
+                <Link
+                  className="nav-link"
+                  to={'https://github.com/Sanchitbajaj02/GitHub-Finder'}
+                  target="_blank"
+                >
+                  <FaGithub size={20} />
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

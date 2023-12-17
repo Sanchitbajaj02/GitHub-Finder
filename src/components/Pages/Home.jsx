@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 
-const Home = () => {
+export default function Home() {
   return (
     <>
-      <section className="container my-5">
+      <section className="my-5">
         <article className="text-center">
           <h1 className="fw-semibold">Welcome to GitHub Finder 👋</h1>
           <p>
@@ -39,5 +39,3 @@ const Home = () => {
     </>
   )
 }
-
-export default Home

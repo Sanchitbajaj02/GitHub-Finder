@@ -1,9 +1,6 @@
-import { Fragment } from 'react'
-import React from 'react'
-
-const About = () => {
+export default function About() {
   return (
-    <Fragment>
+    <>
       <section className="card card-cover shadow p-3 m-5">
         <article className="mt-3">
           <h3>About this App</h3>
@@ -57,8 +54,6 @@ const About = () => {
           </ul>
         </article>
       </section>
-    </Fragment>
+    </>
   )
 }
-
-export default About

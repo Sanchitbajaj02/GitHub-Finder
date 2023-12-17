@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import RepoCard from './RepoCard'
 
 import { getUserRepos } from '../../utils/axios'

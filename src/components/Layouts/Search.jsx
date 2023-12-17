@@ -5,6 +5,10 @@ const Search = ({ data, setData, type }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+
+    const formdata = new FormData(event.target)
+
+    console.log(formdata)
     setData(refVar.current.value)
   }
 
@@ -12,20 +16,23 @@ const Search = ({ data, setData, type }) => {
     <React.Fragment>
       <form className="my-4" onSubmit={handleSubmit} method="GET">
         <div className="row">
-          <div className="col-md-9 my-3">
+          <div className="col-md-10 my-3">
             <div className="form-group">
               <input
-                type="text"
+                type="search"
                 className="form-control"
                 name="username"
                 id="username"
                 placeholder={`Search for ${type}`}
                 ref={refVar}
+                defaultValue={data}
               />
             </div>
           </div>
-          <div className="col-md-3 my-3">
-            <button className="btn btn-custom-color">Submit</button>
+          <div className="col-md-2 my-3">
+            <button type="submit" className="btn btn-custom-color">
+              Search user
+            </button>
           </div>
         </div>
       </form>
