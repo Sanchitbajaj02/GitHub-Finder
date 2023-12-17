@@ -2,7 +2,7 @@ import { Route, Routes, Navigate } from 'react-router-dom'
 
 import GithubProvider from './context/GithubProvider'
 
-import Header from './Components/Layouts/Header'
+import Header from "./components/Layouts/Header"
 
 import {
   About,
