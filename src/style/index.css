@@ -26,26 +26,11 @@ p {
   font-family: var(--font-poppins);
 }
 
-.star-background {
-  width: 100%;
-  height: 90vh;
-  /* background: url(../assets/background.webp);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat; */
-}
 
 .navbar-bg-color {
   background-color: var(--main-color) !important;
   font-family: var(--font-poppins);
   font-size: 18px;
-}
-
-.home-grid-wrapper {
-  height: 90vh;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .link-card-highlight {
@@ -113,16 +98,9 @@ input[type='text'] {
   border-radius: 50%;
 }
 
-/* user profile */
-/* .profile-card-img {
-  text-align: center;
-  width: 70%;
-  height: auto;
-} */
 
 .profile-github-button {
   outline: none;
-  /* padding: 0.5rem 1.5rem; */
   color: var(--main-color);
   background-color: white;
   border: 1px solid var(--main-color);
@@ -142,7 +120,6 @@ input[type='text'] {
 @media screen and (max-width: 991px) {
   .flex-buttons {
     flex-direction: column;
-    /* align-items: center; */
   }
 
   .flex-buttons > button {
@@ -151,7 +128,6 @@ input[type='text'] {
 }
 
 .badge {
-  /* margin-left: 5px; */
   border-radius: 50px;
   padding: 0.3rem 0.8rem;
   font-weight: 600;
