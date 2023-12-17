@@ -2,7 +2,7 @@
 
 ## ⚡ Project Status
 
-[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103?color=greendark)](https://github.com/ellerbrock/open-source-badges/)
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103?color=greendark)](https://github.com/Sanchitbajaj02/GitHub-Finder)
 [![Contributers](https://img.shields.io/github/contributors/Sanchitbajaj02/GitHub-Finder?color=greendark)](https://github.com/Sanchitbajaj02/GitHub-Finder/graphs/contributors)
 [![license MIT](https://img.shields.io/github/license/Sanchitbajaj02/GitHub-Finder?color=greendark)](https://github.com/Sanchitbajaj02/GitHub-Finder/blob/master/LICENSE)
 [![Issues](https://img.shields.io/github/issues/Sanchitbajaj02/GitHub-Finder?color=greendark&logo=github)](https://github.com/Sanchitbajaj02/GitHub-Finder/issues)
