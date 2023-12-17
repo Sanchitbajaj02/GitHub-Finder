@@ -2,8 +2,8 @@ import { createContext, useState } from 'react'
 
 const initialState = {
   username: '',
-  error: '',
-  loading: '',
+  error: false,
+  loading: false,
 }
 
 export const GithubContext = createContext(initialState)
@@ -13,8 +13,8 @@ const username = window.sessionStorage.getItem('username')
 export default function GithubProvider({ children }) {
   const [store, setStore] = useState({
     username: username || '',
-    error: '',
-    loading: '',
+    error: false,
+    loading: false,
   })
 
   if (!children) {

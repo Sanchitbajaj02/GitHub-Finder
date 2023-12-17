@@ -114,16 +114,15 @@ input[type='text'] {
 }
 
 /* user profile */
-.profile-card-img {
+/* .profile-card-img {
   text-align: center;
-  width: 75%;
-  border-radius: 10px;
-}
+  width: 70%;
+  height: auto;
+} */
 
 .profile-github-button {
   outline: none;
-  padding: 0.5rem 1.5rem;
-  font-size: 1rem;
+  /* padding: 0.5rem 1.5rem; */
   color: var(--main-color);
   background-color: white;
   border: 1px solid var(--main-color);
@@ -141,9 +140,6 @@ input[type='text'] {
 }
 
 @media screen and (max-width: 991px) {
-  .profile-github-button {
-    width: 100%;
-  }
   .flex-buttons {
     flex-direction: column;
     /* align-items: center; */

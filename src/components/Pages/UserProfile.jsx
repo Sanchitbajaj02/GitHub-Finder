@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 // import GithubContext from '../../Context/GithubContext'
 import { useGithubContext } from '../../hooks/useGithubContext'
+import { getUserData } from '../../utils/axios'
+import Repositories from '../Layouts/Repositories'
 
+// icons
 import { MdArrowBackIos } from 'react-icons/md'
 import { BiMap, BiGlobe, BiNote } from 'react-icons/bi'
 import {
@@ -13,13 +16,11 @@ import {
   FaGithub,
   FaTwitter,
 } from 'react-icons/fa'
-import { getUserData } from '../../utils/axios'
-
-import Repositories from '../Layouts/Repositories'
+import { HiUsers } from 'react-icons/hi2'
 
 export default function UserProfile() {
   const [getGithubUser, setGithubUser] = useState({})
-  const { setStore } = useGithubContext()
+  const { store, setStore } = useGithubContext()
 
   const { username } = useParams()
 
@@ -31,18 +32,26 @@ export default function UserProfile() {
       .catch((err) => console.log(err))
   }, [username])
 
+  if (store.loading) {
+    return <h1>Loading...</h1>
+  }
+
   return (
     <React.Fragment>
       {/* back button */}
-      <section className="my-3">
+      <section className="mt-3">
         {getGithubUser.type === 'User' ? (
           <Link
             to="/users"
             type="button"
-            className="btn  mt-4"
+            className="btn"
             onClick={() => {
               window.sessionStorage.clear()
-              setStore('')
+              setStore({
+                username: '',
+                error: false,
+                loading: true,
+              })
             }}
           >
             <MdArrowBackIos size={20} /> Back to Search
@@ -54,7 +63,11 @@ export default function UserProfile() {
             className="btn  mt-4"
             onClick={() => {
               window.sessionStorage.clear()
-              setStore('')
+              setStore({
+                username: '',
+                error: false,
+                loading: true,
+              })
             }}
           >
             <MdArrowBackIos size={20} /> Back to Search
@@ -63,40 +76,56 @@ export default function UserProfile() {
       </section>
 
       {/* profile section */}
-      <section className="my-3">
+      <section className="my-4">
         <article className="row mb-3">
-          <div className="col-md-4 text-center my-2">
+          <div className="col-md-4 text-center my-3">
             <img
               src={getGithubUser?.avatar_url}
               alt={getGithubUser?.login}
-              className="profile-card-img img-fluid overflow-hidden rounded-4 shadow-lg"
+              className="profile-card-img img-fluid overflow-hidden rounded-2 shadow-lg"
+              width={'65%'}
             />
           </div>
           <div className="col-md-8 my-2">
-            <div className="d-flex align-items-center">
-              <h2 className="me-3">{getGithubUser?.name}</h2>
+            <div className="d-flex gap-3 align-items-center">
+              <h2 className="fw-bold mb-0">{getGithubUser?.name}</h2>
 
               {getGithubUser?.hireable ? (
                 <span className="badge bg-success text-light">Hireable</span>
               ) : getGithubUser?.type === 'User' ? (
                 <span className="badge bg-danger text-light">Not-Hireable</span>
               ) : null}
+
+              <a
+                type="button"
+                href={getGithubUser.html_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn profile-github-button fw-medium"
+                title="visit github"
+              >
+                <FaGithub size={20} />
+              </a>
             </div>
-            <h5 className="mb-3">@ {getGithubUser?.login}</h5>
-
+            <p className="fw-medium">@{getGithubUser?.login}</p>
             {getGithubUser.bio && (
-              <h5 className="mb-3">
+              <p className="fw-medium">
                 <BiNote /> {getGithubUser?.bio}
-              </h5>
+              </p>
             )}
-
             {getGithubUser.location && (
-              <h5 className="mb-3">
+              <p className="fw-medium">
                 <BiMap /> {getGithubUser.location}
-              </h5>
+              </p>
+            )}
+            {getGithubUser.followers && getGithubUser.following && (
+              <p className="fw-medium">
+                <HiUsers /> Followers {getGithubUser.followers} / <HiUsers />{' '}
+                Following {getGithubUser.following}
+              </p>
             )}
             {getGithubUser.blog && (
-              <h5 className="mb-3">
+              <p className="fw-medium">
                 <BiGlobe />{' '}
                 <a
                   href={getGithubUser.blog}
@@ -105,10 +134,10 @@ export default function UserProfile() {
                 >
                   {getGithubUser.blog}
                 </a>
-              </h5>
+              </p>
             )}
             {getGithubUser.twitter_username && (
-              <h5 className="mb-3">
+              <p className="fw-medium">
                 <FaTwitter />{' '}
                 <a
                   href={`https://twitter.com/${getGithubUser.twitter_username}`}
@@ -117,24 +146,23 @@ export default function UserProfile() {
                 >
                   {getGithubUser.twitter_username}
                 </a>
-              </h5>
+              </p>
             )}
-
-            <div className="my-2">
+            {/* <div className="my-2">
               <a
                 type="button"
                 href={getGithubUser.html_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn profile-github-button"
+                className="btn profile-github-button fw-medium"
               >
-                <FaGithub size={22} /> Visit GitHub Profile
+                <FaGithub size={20} /> Visit GitHub Profile
               </a>
-            </div>
+            </div> */}
           </div>
         </article>
 
-        <article className="row g-1 py-3 row-cols-1 row-cols-md-2 row-cols-lg-4">
+        <article className="row g-1 py-3 row-cols-2 row-cols-lg-4">
           <div className="col d-flex align-items-center">
             <div className="icon-square text-bg-dark d-inline-flex align-items-center justify-content-center p-2 rounded me-3">
               <FaUsers size={30} />
@@ -181,7 +209,7 @@ export default function UserProfile() {
         </article>
       </section>
 
-      <section className="my-3">
+      <section className="">
         <div className="card card-cover shadow p-3">
           <section className="row">
             {getGithubUser?.type !== 'Organization' ? (
