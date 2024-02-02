@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useGithubContext } from '../../hooks/useGithubContext'
 import { getUserData } from '../../utils/axios'
 import Repositories from '../Layouts/Repositories'
+import GitHubCalendar from 'react-github-calendar'
 
 // icons
 import { MdArrowBackIos } from 'react-icons/md'
@@ -22,6 +23,8 @@ import {
 
 export default function UserProfile() {
   const [getGithubUser, setGithubUser] = useState({})
+  const [activityBarLoader, setActivityBarLoader] = useState(true)
+
   const { store, setStore } = useGithubContext()
 
   const { username } = useParams()
@@ -30,6 +33,7 @@ export default function UserProfile() {
     getUserData(username)
       .then((resp) => {
         setGithubUser(resp)
+        setActivityBarLoader(false)
       })
       .catch((err) => console.log(err))
   }, [username])
@@ -217,6 +221,15 @@ export default function UserProfile() {
           <h2 className="h3 text-center fw-bold mb-4">
             @{getGithubUser?.login}&#39;s Statistics
           </h2>
+
+          <div className="github-activity-calender-container">
+            <GitHubCalendar
+              username={getGithubUser?.login}
+              colorScheme="light"
+              blockSize={14}
+              loading={activityBarLoader}
+            />
+          </div>
 
           <div className="row">
             <div className="col-12">

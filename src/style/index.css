@@ -116,6 +116,12 @@ input[type='text'] {
   justify-content: space-between;
 }
 
+.github-activity-calender-container {
+  max-width: 100%;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
 @media screen and (max-width: 991px) {
   .flex-buttons {
     flex-direction: column;

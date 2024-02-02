@@ -11,9 +11,9 @@
 [![Stars](https://img.shields.io/github/stars/Sanchitbajaj02/GitHub-Finder?color=greendark)](https://github.com/Sanchitbajaj02/GitHub-Finder/stargazers)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Sanchitbajaj02/GitHub-Finder?color=greendark)
 
-<h2 align="center">This project will be entered in Hacktoberfest 2023</h2>
+<!-- <h2 align="center">This project will be entered in Hacktoberfest 2023</h2>
 
-![Welcome to hacktoberfest](.github/assets/hacktoberfest-banner.png)
+![Welcome to hacktoberfest](.github/assets/hacktoberfest-banner.png) -->
 
 ## 🤔 Why open source
 
