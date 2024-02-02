@@ -3,55 +3,53 @@ export default function About() {
     <>
       <section className="card card-cover shadow p-3 m-5">
         <article className="mt-3">
-          <h3>About this App</h3>
+          <h3>👋 Introduction</h3>
           <p>
-            It searches for all the Github users using the text inputted by the
-            user in the form. It returns all the users matching the string in a
-            grid format.
+            GitHub Finder is a web application that helps users retrieve
+            information about their GitHub statistics, which dynamically change
+            with their profile activity.
           </p>
         </article>
 
         <article className="mt-3">
-          <h3>How to use this App</h3>
+          <h3>🔨 What does it do?</h3>
           <p>
-            The user can search for any Github user by entering the username in
-            the form. The user can also search for any Github organization by
-            entering the organization name in the form. The user can also search
-            for any Github repository by entering the repository name in the
-            form.
+            Github finder contains a search feature that searches for all the
+            Github users using the text entered by the user. It displays the
+            users whose username fully or partially matches with the entered
+            text. This GitHub Finder differs from others in the sense that, it
+            not only shows the basic information of that GitHub user account but
+            also shows their activities, contributions, commits, pull requests
+            and overall profile score.
+          </p>
+        </article>
+
+        <article>
+          <h3 className="mt-3">🙏🏽 Support</h3>
+          <p>
+            This project needs a star from you. Do not forget to leave a star 🌟
           </p>
         </article>
 
         <article className="mt-3">
-          <h3>Version: 2.0.0</h3>
+          <h3>
+            Version:{' '}
+            <img
+              src="https://img.shields.io/github/v/release/sanchitbajaj02/github-finder?style=for-the-badge"
+              alt="Current Release"
+            />
+          </h3>
         </article>
 
         <article className="mt-3">
           <h4 className="d-inline">Contributors:- </h4>
-          <ul>
-            <li className="fs-5">
-              Sanchit Bajaj{' '}
-              <a
-                href="http://github.com/sanchitbajaj02/"
-                target="_blank"
-                className="link-hover"
-                rel="noreferrer noopener"
-              >
-                @sanchitbajaj02
-              </a>
-            </li>
-            <li className="fs-5">
-              Sahil Gill{' '}
-              <a
-                href="https://github.com/SahilGill003"
-                target="_blank"
-                className="link-hover"
-                rel="noreferrer noopener"
-              >
-                @SahilGill003
-              </a>
-            </li>
-          </ul>
+          <br />
+          <br />
+
+          <img
+            src="https://contrib.rocks/image?repo=sanchitbajaj02/github-finder"
+            alt="github-finder-contributors"
+          />
         </article>
       </section>
     </>
